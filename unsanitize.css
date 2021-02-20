@@ -1,0 +1,6 @@
+/* unsanitize.css */
+
+nav ol,
+nav ul {
+  list-style: initial;
+}

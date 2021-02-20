@@ -1,0 +1,97 @@
+/* core.css */
+
+:root {
+  /* semantic colors */
+  --core__success__color: green;
+  --core__error__color: crimson;
+  --core__samp-kbd-var__background-color: lavender;
+  /* NB #F0F0F0 is the same as hljs default theme */
+  --core__code__background-color: #f0f0f0;
+  /* --core__output__background-color: oldlace; */
+  --core__mark__background-color: yellow;
+  /* --core__control__validation--border-width: 3px; */
+
+  /* tables */
+  --core__th__background-color: #ddd;
+  --core__th__color: #000;
+  --core__even-row__background-color: #f2f2f2;
+  --core__odd-row__background-color: #fff;
+
+  /* controls */
+  /* --core__control__background-color: #fcfcfc; */
+  /* --core__control__color: #111; */
+  /* --core__control__height: 2em; */
+  /* --core__control__width: 12em; */
+
+  /* general */
+  --core__background-color: #fff;
+  --core__color: #111;
+  --core__border-width: 1px;
+  --core__border-color: #ccc;
+
+  --core__border: var(--core__border-width) solid var(--core__border-color);
+
+  --core__indent-size: 1.5em;
+  --core__indent-size--bullet: calc(var(--core__indent-size) + 1.5em);
+  --core__vertical-padding-size: 1em;
+  --core__small-pad: 0.3em;
+
+  /* padding */
+  --core__text__padding: calc(var(--core__small-pad) / 3) var(--core__small-pad);
+  --core__cell__padding: var(--core__small-pad) calc(var(--core__small-pad * 3));
+  /* --core__input__padding: 0 --core__small-pad; */
+  /* --core__button__padding: 0 --core__small-pad * 3; */
+  --core__container__padding-size: 1em;
+
+  /* headings */
+  --core__h1__font-size: 2em;
+  --core__h2__font-size: 1.5em;
+  --core__h3__font-size: 1.17em;
+  --core__h4__font-size: 1em;
+  --core__h5__font-size: 0.83em;
+  --core__h6__font-size: 0.67em;
+
+  /* button colors */
+  /* --core__button__background-color: #eee; */
+  /* --core__button__color: #111; */
+  /* --core__button-submit__background-color: royalblue; */
+  /* --core__button-submit__color: #fff; */
+  /* --core__button-reset__background-color: firebrick; */
+  /* --core__button-reset__color: #fff; */
+
+  /* options */
+  /* --enable-styling: true; */
+  /* --enable-semantic-colors: true; */
+  /* --enable-bustout-prevention: true; */
+
+  /*
+// mixins
+@mixin highlight {
+  @if --enable-styling {
+    filter: brightness(110%);
+  }
+}
+
+@mixin highlight-2 {
+  @if --enable-styling {
+    filter: brightness(130%);
+  }
+}
+
+@mixin lowlight {
+  @if --enable-styling {
+    filter: brightness(95%);
+  }
+}
+
+@function disable-color(--color) {
+  --target: #fff;
+  @return  mix(--target, desaturate(lighten(--color, 0%), 40%), 50%);
+}
+
+@function readonly-color(--color) {
+  --target: #fff;
+  @return  mix(--target, desaturate(lighten(--color, 0%), 40%), 50%);
+}
+ */
+}

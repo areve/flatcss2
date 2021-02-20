@@ -1,13 +1,19 @@
 /* _general-styling.css */
 
 /* mixins */
-@define-mixin highlight {
+@mixin highlight {
   @if $enable-styling {
     filter: brightness(110%);
   }
 }
 
-@define-mixin content-block {
+@mixin section-block {
+  @if $enable-styling {
+    margin: var(--core__vertical-padding-size) 0;
+  }
+}
+
+@mixin content-block {
   margin: var(--core__container__padding-size) 0;
 }
 
@@ -65,7 +71,7 @@ p,
 pre,
 address,
 blockquote {
-  @mixin section-block;
+  @include section-block;
 }
 
 pre {
@@ -90,17 +96,17 @@ address {
 /* lists */
 ul,
 ol {
-  @mixin content-block;
+  @include content-block;
   padding-left: var(--core__indent-size--bullet);
 }
 
 dl {
-  @mixin content-block;
+  @include content-block;
 }
 
 dt,
 dd {
-  @mixin content-block;
+  @include content-block;
   padding-left: var(--core__indent-size);
   + dd {
     margin-top: calc(-var(--core__container__padding-size));
@@ -113,7 +119,7 @@ dt {
 
 /* figure */
 figure {
-  @mixin content-block;
+  @include content-block;
   border: var(--core__border);
   padding: var(--core__container__padding-size);
 }
@@ -176,7 +182,7 @@ mark {
 
 /* tables */
 table {
-  @mixin content-block;
+  @include content-block;
   background-color: var(--core__even-row__background-color);
 }
 
@@ -225,7 +231,7 @@ a {
     &:focus,
     &:active,
     &:hover:not([disabled]) {
-      @mixin highlight;
+      @include highlight;
     }
   }
 }
@@ -241,12 +247,12 @@ audio {
 }
 
 noscript {
-  @mixin section-block;
+  @include section-block;
 }
 
 /* forms */
 fieldset {
-  @mixin content-block;
+  @include content-block;
   border-style: none;
   padding: 0;
   padding-top: var(--core__container__padding-size);
@@ -258,9 +264,9 @@ legend {
 
 /* collapsable details */
 details {
-  @mixin content-block;
+  @include content-block;
 }
 
 summary {
-  @mixin content-block;
+  @include content-block;
 }

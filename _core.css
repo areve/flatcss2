@@ -51,7 +51,7 @@
 
   /* padding */
   --text__padding: calc(var(--small-pad) / 3) var(--small-pad);
-  --cell__padding: var(--small-pad) calc(var(--small-pad * 3));
+  --cell__padding: var(--small-pad) calc(var(--small-pad) * 3);
   --input__padding: 0 var(--small-pad);
   --button__padding: 0 calc(var(--small-pad) * 3);
   --container__padding-size: 1em;

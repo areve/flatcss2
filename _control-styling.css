@@ -254,20 +254,21 @@
     }
 
     @if $enable-semantic-colors {
-      /*
-      button%flat-button:not([type]):not(%flat-standard):not(%flat-negative),
-      %flat-button[type=submit]:not(%flat-standard):not(%flat-negative),
-      %flat-input[type=submit]:not(%flat-standard):not(%flat-negative),
-      %flat-button%flat-primary,
-      %flat-button[type=reset]%flat-primary,
-      %flat-input[type=reset]%flat-primary,
-      %flat-input[type=button]%flat-primary {
-        background-color: $core__button-submit__background-color;
-        color: $core__button-submit__color;
+      button.button:not([type]):not(.standard):not(.negative),
+      button[type="submit"]:not(.standard):not(.negative),
+      input[type="submit"]:not(.standard):not(.negative),
+      button.primary,
+      button[type="reset"].primary,
+      input[type="reset"].primary,
+      input[type="button"].primary {
+        background-color: var(--core__button-submit__background-color);
+        color: var(--core__button-submit__color);
 
         &[disabled] {
-          background-color: disable-color($core__button-submit__background-color);
-          color: disable-color($core__button-submit__color);
+          background-color: disable-color(
+            var(--core__button-submit__background-color)
+          );
+          color: disable-color(var(--core__button-submit__color));
         }
 
         &:focus,
@@ -277,17 +278,18 @@
         }
       }
 
-      %flat-button[type=reset]:not(%flat-standard):not(%flat-primary),
-      %flat-input[type=reset]:not(%flat-standard):not(%flat-primary),
-      %flat-button%flat-negative,
-      %flat-input[type=submit]%flat-negative,
-      %flat-input[type=button]%flat-negative
-      {
-        background-color: $core__button-reset__background-color;
-        color: $core__button-reset__color;
+      button[type="reset"]:not(.standard):not(.primary),
+      input[type="reset"]:not(.standard):not(.primary),
+      button.negative,
+      input[type="submit"].negative,
+      input[type="button"].negative {
+        background-color: var(--core__button-reset__background-color);
+        color: var(--core__button-reset__color);
         &[disabled] {
-          background-color: disable-color($core__button-reset__background-color);
-          color: disable-color($core__button-reset__color);
+          background-color: disable-color(
+            var(--core__button-reset__background-color)
+          );
+          color: disable-color(var(--core__button-reset__color));
         }
         &:focus,
         &:active,
@@ -296,16 +298,17 @@
         }
       }
 
-      %flat-button%flat-normal,
-      %flat-input[type=reset]%flat-button,
-      %flat-input[type=submit]%flat-button,
-      %flat-input[type=button]%flat-normal
-      {
-        background-color: $core__button__background-color;
-        color: $core__button__color;
+      button.normal,
+      input[type="reset"].button,
+      input[type="submit"].button,
+      input[type="button"].normal {
+        background-color: var(--core__button__background-color);
+        color: var(--core__button__color);
         &[disabled] {
-          background-color: disable-color($core__button__background-color);
-          color: disable-color($core__button__color);
+          background-color: disable-color(
+            var(--core__button__background-color)
+          );
+          color: disable-color(var(--core__button__color));
         }
         &:focus,
         &:active,
@@ -313,7 +316,6 @@
           @include lowlight;
         }
       }
-      */
     }
 
     input[type="checkbox"],
@@ -374,7 +376,7 @@
       }
     }
 
-    %flat-input[type="radio"] {
+    input[type="radio"] {
       border-radius: 50%;
       &::before {
         border-radius: 50%;

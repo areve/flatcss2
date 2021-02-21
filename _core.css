@@ -39,8 +39,8 @@
   /* padding */
   --core__text__padding: calc(var(--core__small-pad) / 3) var(--core__small-pad);
   --core__cell__padding: var(--core__small-pad) calc(var(--core__small-pad * 3));
-  --core__input__padding: 0 --core__small-pad;
-  --core__button__padding: 0 --core__small-pad * 3;
+  --core__input__padding: 0 var(--core__small-pad);
+  --core__button__padding: 0 calc(var(--core__small-pad) * 3);
   --core__container__padding-size: 1em;
 
   /* headings */

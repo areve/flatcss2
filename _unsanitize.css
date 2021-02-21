@@ -5,3 +5,7 @@ nav ol,
 nav ul {
   list-style: initial;
 }
+
+input[type="image"] {
+  padding: 0;
+}

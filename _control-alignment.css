@@ -113,7 +113,7 @@
   }
 
   /* buttons */
-  labelbutton {
+  label.button {
     @include vertical-align-baseline--fix-overflow-hidden;
   }
   select,

@@ -1,8 +1,8 @@
 /* _control-styling.css */
 
-$enable-styling: true;
-
-$controls__progress__color: var(--core__button-submit__background-color);
+:root {
+  --controls__progress__color: var(--core__button-submit__background-color);
+}
 
 @mixin flat-button-styling {
   @if $enable-styling {

@@ -1,27 +1,27 @@
 /* _control-styling.css */
 
 :root {
-  --controls__progress__color: var(--core__button-submit__background-color);
+  --controls__progress__color: var(--button-submit__background-color);
 }
 
 @mixin flat-button-styling() {
   @if $enable-styling {
     border-style: none;
-    background-color: var(--core__button__background-color);
-    color: var(--core__button__color);
-    padding: var(--core__button__padding);
+    background-color: var(--button__background-color);
+    color: var(--button__color);
+    padding: var(--button__padding);
   }
 }
 
 @mixin validation-highlight($color: null) {
   @if $color == null {
-    border-left-width: var(--core__border-width);
-    border-left-color: var(--core__border-color);
+    border-left-width: var(--border-width);
+    border-left-color: var(--border-color);
     text-indent: calc(
-      var(--core__control__validation--border-width) - var(--core__border-width)
+      var(--control__validation--border-width) - var(--border-width)
     );
   } @else {
-    border-left: var(--core__control__validation--border-width) solid;
+    border-left: var(--control__validation--border-width) solid;
     border-left-color: $color;
     text-indent: 0;
   }
@@ -34,13 +34,13 @@
 
 @mixin valid-background($opacity) {
   @include background-icon();
-  background-color: var(--core__control__background-color);
+  background-color: var(--control__background-color);
   background-position: calc(100% - 0.5em) 0.5em;
 }
 
 @mixin invalid-background($opacity) {
   @include background-icon();
-  background-color: var(--core__control__background-color);
+  background-color: var(--control__background-color);
   background-position: calc(100% - 0.5em) 0.5em;
 }
 
@@ -68,17 +68,17 @@
     input[type="number"],
     input[type="file"],
     input:not([type]) {
-      border: var(--core__border);
-      background-color: var(--core__control__background-color);
-      color: var(--core__control__color);
+      border: var(--border);
+      background-color: var(--control__background-color);
+      color: var(--control__color);
 
       &[disabled] {
-        background-color: var(--core__control__background-color--disabled);
-        color: var(--core__control__color--disabled);
+        background-color: var(--control__background-color--disabled);
+        color: var(--control__color--disabled);
       }
       &[readonly] {
-        background-color: var(--core__control__background-color--readonly);
-        color: var(--core__control__color--readonly);
+        background-color: var(--control__background-color--readonly);
+        color: var(--control__color--readonly);
       }
     }
 
@@ -96,7 +96,7 @@
     input[type="password"],
     input[type="local"],
     input:not([type]) {
-      /* border-left: $core__control__validation--border-width solid; */
+      /* border-left: $control__validation--border-width solid; */
       &:optional {
         @include valid-background(0);
         background-image: var(--icon-validation--optional);
@@ -108,7 +108,7 @@
       &[min],
       &[pattern],
       &:required {
-        @include validation-highlight(var(--core__success__color));
+        @include validation-highlight(var(--success__color));
         @include valid-background(1);
         background-image: var(--icon-validation--valid);
 
@@ -122,7 +122,7 @@
         }
       }
       &:invalid {
-        @include validation-highlight(var(--core__error__color));
+        @include validation-highlight(var(--error__color));
         @include invalid-background();
         background-image: var(--icon-validation--invalid);
       }
@@ -170,12 +170,12 @@
     input[type="week"],
     input[type="date"],
     input:not([type]) {
-      width: var(--core__control__width);
+      width: var(--control__width);
     }
 
     input[type="time"],
     input[type="number"] {
-      width: calc(var(--core__control__width) / 2);
+      width: calc(var(--control__width) / 2);
     }
 
     input {
@@ -203,7 +203,7 @@
 
     output {
       @if $enable-semantic-colors {
-        background-color: var(--core__output__background-color);
+        background-color: var(--output__background-color);
       }
     }
 
@@ -230,8 +230,8 @@
     input[type="button"],
     button {
       &[disabled] {
-        background-color: var(--core__button__background-color--disabled);
-        color: var(--core__button__color--disabled);
+        background-color: var(--button__background-color--disabled);
+        color: var(--button__color--disabled);
       }
     }
 
@@ -243,14 +243,12 @@
       button[type="reset"].primary,
       input[type="reset"].primary,
       input[type="button"].primary {
-        background-color: var(--core__button-submit__background-color);
-        color: var(--core__button-submit__color);
+        background-color: var(--button-submit__background-color);
+        color: var(--button-submit__color);
 
         &[disabled] {
-          background-color: var(
-            --core__button-submit__background-color--disabled
-          );
-          color: var(--core__button-submit__color--disabled);
+          background-color: var(--button-submit__background-color--disabled);
+          color: var(--button-submit__color--disabled);
         }
 
         &:focus,
@@ -265,13 +263,11 @@
       button.negative,
       input[type="submit"].negative,
       input[type="button"].negative {
-        background-color: var(--core__button-reset__background-color);
-        color: var(--core__button-reset__color);
+        background-color: var(--button-reset__background-color);
+        color: var(--button-reset__color);
         &[disabled] {
-          background-color: var(
-            --core__button-reset__background-color--disabled
-          );
-          color: var(--core__button-reset__color--disabled);
+          background-color: var(--button-reset__background-color--disabled);
+          color: var(--button-reset__color--disabled);
         }
         &:focus,
         &:active,
@@ -284,11 +280,11 @@
       input[type="reset"].button,
       input[type="submit"].button,
       input[type="button"].normal {
-        background-color: var(--core__button__background-color);
-        color: var(--core__button__color);
+        background-color: var(--button__background-color);
+        color: var(--button__color);
         &[disabled] {
-          background-color: var(--core__button__background-color--disabled);
-          color: var(--core__button__color--disabled);
+          background-color: var(--button__background-color--disabled);
+          color: var(--button__color--disabled);
         }
         &:focus,
         &:active,
@@ -305,16 +301,16 @@
       line-height: 0;
       border: 0;
       position: relative;
-      top: calc(var(--core__control__height) * -1 / 16);
+      top: calc(var(--control__height) * -1 / 16);
       &:before {
         position: absolute;
         content: " ";
-        background-color: var(--core__control__background-color);
+        background-color: var(--control__background-color);
         display: inline-block;
-        height: calc(var(--core__control__height) * 6 / 8);
-        width: calc(var(--core__control__height) * 6 / 8);
+        height: calc(var(--control__height) * 6 / 8);
+        width: calc(var(--control__height) * 6 / 8);
         overflow: hidden;
-        border: var(--core__border);
+        border: var(--border);
       }
 
       &:hover:not([disabled]):before {
@@ -322,10 +318,10 @@
       }
 
       &[disabled]:before {
-        background-color: var(--core__control__background-color--disabled);
+        background-color: var(--control__background-color--disabled);
       }
       &[readonly]:before {
-        background-color: var(--core__control__background-color--readonly);
+        background-color: var(--control__background-color--readonly);
       }
     }
 
@@ -396,18 +392,18 @@
     input[type="color"] {
       -webkit-appearance: none;
       padding: 5px;
-      width: calc(var(--core__control__height) * 15 / 16);
-      height: calc(var(--core__control__height) * 15 / 16);
-      background-color: var(--core__control__background-color);
+      width: calc(var(--control__height) * 15 / 16);
+      height: calc(var(--control__height) * 15 / 16);
+      background-color: var(--control__background-color);
       @media screen and (-webkit-min-device-pixel-ratio: 0) {
         /* set padding on ms and chrome */
         padding: 1px 3px;
       }
       &[disabled] {
-        background-color: var(--core__control__background-color--disabled);
+        background-color: var(--control__background-color--disabled);
       }
       &[readonly] {
-        background-color: var(--core__control__background-color--readonly);
+        background-color: var(--control__background-color--readonly);
       }
       &:focus,
       &:hover:not([disabled]):not([readonly]) {
@@ -417,10 +413,10 @@
 
     input[type="range"] {
       appearance: none;
-      height: var(--core__control__height);
-      width: var(--core__control__width);
+      height: var(--control__height);
+      width: var(--control__width);
       /* for ms */
-      background-color: var(--core__control__background-color);
+      background-color: var(--control__background-color);
       &[disabled],
       &[readonly] {
         opacity: 0.5;
@@ -433,9 +429,9 @@
       }
       &::-webkit-slider-thumb {
         -webkit-appearance: none;
-        background-color: var(--core__button-submit__background-color);
-        height: calc(var(--core__control__height) * 6 / 8);
-        width: calc(var(--core__control__height) * 6 / 8);
+        background-color: var(--button-submit__background-color);
+        height: calc(var(--control__height) * 6 / 8);
+        width: calc(var(--control__height) * 6 / 8);
       }
       &::-moz-range-track {
         background-color: transparent;
@@ -448,10 +444,10 @@
         }
       }
       &::-moz-range-thumb {
-        background-color: var(--core__button-submit__background-color);
+        background-color: var(--button-submit__background-color);
         border: none;
-        height: calc(var(--core__control__height) * 6 / 8);
-        width: calc(var(--core__control__height) * 6 / 8);
+        height: calc(var(--control__height) * 6 / 8);
+        width: calc(var(--control__height) * 6 / 8);
       }
       &::-ms-track {
         background-color: transparent;
@@ -466,9 +462,9 @@
       }
       &::-ms-thumb {
         appearance: none;
-        background-color: var(--core__button-submit__background-color);
-        height: calc(var(--core__control__height) * 0.6);
-        width: calc(var(--core__control__height) * 0.6);
+        background-color: var(--button-submit__background-color);
+        height: calc(var(--control__height) * 0.6);
+        width: calc(var(--control__height) * 0.6);
       }
       &::-ms-fill-lower {
         background-color: transparent;
@@ -481,7 +477,7 @@
     }
 
     progress {
-      width: var(--core__control__width);
+      width: var(--control__width);
       appearance: none;
       padding: 0;
       /* ms uses this for color */
@@ -494,8 +490,8 @@
         background-color: var(--controls__progress__color);
       }
       &[value]::-webkit-progress-bar {
-        background-color: var(--core__control__background-color);
-        border: var(--core__border);
+        background-color: var(--control__background-color);
+        border: var(--border);
       }
       &[value]::-webkit-progress-value {
         background-color: var(--controls__progress__color);
@@ -512,8 +508,8 @@
       padding: 0px;
       /* background is being used as a border here because border does not work correctly */
       border-radius: 0;
-      background-color: var(--core__border-color);
-      width: var(--core__control__width);
+      background-color: var(--border-color);
+      width: var(--control__width);
     }
 
     select,
@@ -529,7 +525,7 @@
       appearance: none;
       background-position: calc(100% - 0.5em) 50%;
       background-repeat: no-repeat;
-      background-color: var(--core__button__background-color);
+      background-color: var(--button__background-color);
       padding-right: 2em;
       @include validation-highlight(transparent);
       &:active,
@@ -537,14 +533,14 @@
         @include lowlight;
       }
       &[disabled] {
-        background-color: var(--core__button__background-color--disabled);
-        color: var(--core__button__color--disabled);
+        background-color: var(--button__background-color--disabled);
+        color: var(--button__color--disabled);
       }
       &:required {
-        @include validation-highlight(var(--core__success__color));
+        @include validation-highlight(var(--success__color));
       }
       &:invalid {
-        @include validation-highlight(var(--core__error__color));
+        @include validation-highlight(var(--error__color));
       }
     }
 
@@ -562,14 +558,14 @@
       }
       &[disabled]::-webkit-file-upload-button {
         cursor: not-allowed;
-        background-color: var(--core__button__background-color--disabled);
-        color: var(--core__button__color--disabled);
+        background-color: var(--button__background-color--disabled);
+        color: var(--button__color--disabled);
       }
       &:required::-webkit-file-upload-button {
-        @include validation-highlight(var(--core__success__color));
+        @include validation-highlight(var(--success__color));
       }
       &:invalid::-webkit-file-upload-button {
-        @include validation-highlight(var(--core__error__color));
+        @include validation-highlight(var(--error__color));
       }
     }
   }

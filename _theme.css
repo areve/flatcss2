@@ -50,8 +50,8 @@
 
 @mixin button-colors {
   .flat.styling & {
-    background-color: var(--core__button__background-color);
-    color: var(--core__button__color);
+    background-color: var(--button__background-color);
+    color: var(--button__color);
   }
 }
 
@@ -211,7 +211,7 @@ figure {
 
 figcaption {
   .flat.styling & {
-    margin-bottom: var(--core__container__padding-size);
+    margin-bottom: var(--container__padding-size);
   }
 }
 
@@ -224,8 +224,8 @@ address {
 
 body {
   .flat.styling & {
-    background-color: var(--core__background-color);
-    color: var(--core__color);
+    background-color: var(--background-color);
+    color: var(--color);
     font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
     font-size: 1em;
     max-width: 960px;
@@ -239,8 +239,8 @@ fieldset {
   @include theme-radius;
   @include shadow;
   .flat.styling & {
-    padding: var(--core__container__padding-size);
-    border: var(--core__border);
+    padding: var(--container__padding-size);
+    border: var(--border);
   }
 }
 
@@ -248,9 +248,9 @@ legend {
   @include theme-radius;
   @include shadow;
   .flat.styling & {
-    background-color: var(--core__background-color);
-    border: var(--core__border);
-    padding: var(--core__text__padding);
+    background-color: var(--background-color);
+    border: var(--border);
+    padding: var(--text__padding);
   }
 }
 
@@ -260,6 +260,6 @@ table {
     box-shadow: var(--theme__table__box-shadow);
   }
   .flat.styling & {
-    border: var(--core__border);
+    border: var(--border);
   }
 }

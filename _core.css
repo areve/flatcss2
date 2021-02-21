@@ -2,41 +2,94 @@
 
 :root {
   /* semantic colors */
-  $core__success__color: green;
-  $core__success__color--disabled: magenta;
-
-  --core__success__color: $core__success__color;
-  --core__error__color: crimson;
-  --core__samp-kbd-var__background-color: lavender;
+  $success__color: green;
+  --success__color: $success__color;
+  --error__color: crimson;
+  --samp-kbd-var__background-color: lavender;
   /* NB #F0F0F0 is the same as hljs default theme */
-  --core__code__background-color: #f0f0f0;
-  --core__output__background-color: oldlace;
-  --core__mark__background-color: yellow;
-  --core__control__validation--border-width: 3px;
+  --code__background-color: #f0f0f0;
+  --output__background-color: oldlace;
+  --mark__background-color: yellow;
+  --control__validation--border-width: 3px;
 
   /* tables */
-  --core__th__background-color: #ddd;
-  --core__th__color: #000;
-  --core__even-row__background-color: #f2f2f2;
-  --core__odd-row__background-color: #fff;
+  --th__background-color: #ddd;
+  --th__color: #000;
+  --even-row__background-color: #f2f2f2;
+  --odd-row__background-color: #fff;
 
   /* controls */
-  --core__control__background-color: #fcfcfc;
-  $core__control__color: #111;
-  --core__control__color: $core__control__color;
-  --core__control__height: 2em;
-  --core__control__width: 12em;
-
-  --icon-checkbox--unchecked: none;
-  --icon-checkbox--checked: svg-load(
-    "assets/check.svg",
-    fill=$core__control__color
+  $control__background-color: #fcfcfc;
+  --control__background-color: $control__background-color;
+  --control__background-color--readonly: color(
+    $control__background-color saturation(40%) a(50%)
   );
+  --control__background-color--disabled: color(
+    $control__background-color saturation(40%) a(50%)
+  );
+
+  $control__color: #111;
+  --control__color: $control__color;
+  --control__color--readonly: color($control__color saturation(40%) a(50%));
+  --control__color--disabled: color($control__color saturation(40%) a(50%));
+  --control__height: 2em;
+  --control__width: 12em;
+
+  /* general */
+  --background-color: #fff;
+  --color: #111;
+  --border-width: 1px;
+  --border-color: #ccc;
+
+  --border: var(--border-width) solid var(--border-color);
+
+  --indent-size: 1.5em;
+  --indent-size--bullet: calc(var(--indent-size) + 1.5em);
+  --vertical-padding-size: 1em;
+  --small-pad: 0.3em;
+
+  /* padding */
+  --text__padding: calc(var(--small-pad) / 3) var(--small-pad);
+  --cell__padding: var(--small-pad) calc(var(--small-pad * 3));
+  --input__padding: 0 var(--small-pad);
+  --button__padding: 0 calc(var(--small-pad) * 3);
+  --container__padding-size: 1em;
+
+  /* headings */
+  --h1__font-size: 2em;
+  --h2__font-size: 1.5em;
+  --h3__font-size: 1.17em;
+  --h4__font-size: 1em;
+  --h5__font-size: 0.83em;
+  --h6__font-size: 0.67em;
+
+  /* button colors */
+  --button__background-color: #eee;
+  --button__background-color--disabled: magenta;
+  --button__color: #111;
+  --button__color--disabled: magenta;
+
+  --button-submit__background-color: royalblue;
+  --button-submit__color: #fff;
+  --button-submit__background-color--disabled: magenta;
+  --button-submit__color--disabled: magenta;
+
+  --button-reset__background-color: firebrick;
+  --button-reset__color: #fff;
+  --button-reset__background-color--disabled: magenta;
+  --button-reset__color--disabled: magenta;
+
+  /* icons */
+  --icon-checkbox--unchecked: none;
+  --icon-checkbox--checked: svg-load("assets/check.svg", fill=$control__color);
   --icon-checkbox--checked-required: svg-load(
     "assets/check.svg",
-    fill=$core__success__color
+    fill=$success__color
   );
-  --icon-checkbox--checked-disabled: svg-load("assets/check.svg", fill=magenta);
+  --icon-checkbox--checked-disabled: svg-load(
+    "assets/check.svg",
+    fill=color($success__color saturation(40%) a(50%))
+  );
   --icon-checkbox--checked-required-disabled: svg-load(
     "assets/check.svg",
     fill=magenta
@@ -68,48 +121,8 @@
   --icon-radio--disabled: svg-load("assets/circle.svg", fill=magenta);
   --icon-radio--required: svg-load("assets/circle.svg", fill=magenta);
   --icon-radio--required-readonly: svg-load("assets/circle.svg", fill=magenta);
-
-  /* general */
-  --core__background-color: #fff;
-  --core__color: #111;
-  --core__border-width: 1px;
-  --core__border-color: #ccc;
-
-  --core__border: var(--core__border-width) solid var(--core__border-color);
-
-  --core__indent-size: 1.5em;
-  --core__indent-size--bullet: calc(var(--core__indent-size) + 1.5em);
-  --core__vertical-padding-size: 1em;
-  --core__small-pad: 0.3em;
-
-  /* padding */
-  --core__text__padding: calc(var(--core__small-pad) / 3) var(--core__small-pad);
-  --core__cell__padding: var(--core__small-pad) calc(var(--core__small-pad * 3));
-  --core__input__padding: 0 var(--core__small-pad);
-  --core__button__padding: 0 calc(var(--core__small-pad) * 3);
-  --core__container__padding-size: 1em;
-
-  /* headings */
-  --core__h1__font-size: 2em;
-  --core__h2__font-size: 1.5em;
-  --core__h3__font-size: 1.17em;
-  --core__h4__font-size: 1em;
-  --core__h5__font-size: 0.83em;
-  --core__h6__font-size: 0.67em;
-
-  /* button colors */
-  --core__button__background-color: #eee;
-  --core__button__color: #111;
-  --core__button-submit__background-color: royalblue;
-  --core__button-submit__color: #fff;
-  --core__button-reset__background-color: firebrick;
-  --core__button-reset__color: #fff;
-
-  /* options */
-  /* --enable-styling: true; */
-  /* --enable-semantic-colors: true; */
-  /* --enable-bustout-prevention: true; */
 }
+
 /* mixins */
 @mixin highlight {
   @if $enable-styling {
@@ -127,28 +140,4 @@
   @if $enable-styling {
     filter: brightness(95%);
   }
-}
-
-:root {
-  /* @function disable-color(--color) {
-  --target: #fff;
-  @return  mix(--target, desaturate(lighten(--color, 0%), 40%), 50%);
-}
-
-@function readonly-color(--color) {
-  --target: #fff;
-  @return  mix(--target, desaturate(lighten(--color, 0%), 40%), 50%);
-} */
-
-  --core__control__background-color--readonly: magenta;
-  --core__control__color--readonly: magenta;
-
-  --core__button__background-color--disabled: magenta;
-  --core__button__color--disabled: magenta;
-  --core__button-reset__background-color--disabled: magenta;
-  --core__button-reset__color--disabled: magenta;
-  --core__button-submit__background-color--disabled: magenta;
-  --core__button-submit__color--disabled: magenta;
-  --core__control__background-color--disabled: magenta;
-  --core__control__color--disabled: magenta;
 }

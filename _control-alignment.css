@@ -2,19 +2,17 @@
 
 @mixin vertical-align-baseline {
   vertical-align: baseline;
-  margin-top: calc(var(--core__small-pad) / 2);
-  margin-bottom: calc(var(--core__small-pad) / 2);
+  margin-top: calc(var(--small-pad) / 2);
+  margin-bottom: calc(var(--small-pad) / 2);
 }
 
 @mixin vertical-align-baseline-fix(
-  /* core__control__height*/ $height: 2em,
+  /* control__height*/ $height: 2em,
   $top: 0.5
 ) {
   vertical-align: middle;
 
-  $margin: calc(
-    var(--core__control__height) - $height + var(--core__small-pad)
-  );
+  $margin: calc(var(--control__height) - $height + var(--small-pad));
 
   margin-top: calc($margin * $top);
   margin-bottom: calc($margin * calc(1 - $top));
@@ -22,16 +20,16 @@
 
 @mixin vertical-align-baseline--fix-overflow-hidden {
   vertical-align: bottom;
-  margin-top: calc(var(--core__small-pad) / 2);
-  margin-bottom: calc(var(--core__small-pad) / 2);
+  margin-top: calc(var(--small-pad) / 2);
+  margin-bottom: calc(var(--small-pad) / 2);
 }
 
 @mixin flat-button-alignment {
   @include vertical-align-baseline;
   display: inline-block;
-  min-height: var(--core__control__height);
+  min-height: var(--control__height);
   /* vertically centers text on links */
-  line-height: var(--core__control__height);
+  line-height: var(--control__height);
   position: relative;
 }
 
@@ -62,19 +60,19 @@
     @include vertical-align-baseline;
     display: inline-block;
     position: relative;
-    height: var(--core__control__height);
-    padding: var(--core__input__padding);
+    height: var(--control__height);
+    padding: var(--input__padding);
   }
 
   input {
     &[type="file"] {
       @include vertical-align-baseline-fix();
-      height: var(--core__control__height);
+      height: var(--control__height);
     }
 
     &[type="color"],
     &[type="range"] {
-      $height: calc(var(--core__control__height) * 15 / 16);
+      $height: calc(var(--control__height) * 15 / 16);
       height: $height;
       @include vertical-align-baseline-fix($height, 0.2);
     }
@@ -85,7 +83,7 @@
 
     &[type="checkbox"],
     &[type="radio"] {
-      $height: calc(var(--core__control__height) * 6 / 8);
+      $height: calc(var(--control__height) * 6 / 8);
       height: $height;
       width: $height;
       @include vertical-align-baseline-fix($height, 0.5);
@@ -103,13 +101,13 @@
   output {
     @include vertical-align-baseline-fix();
     /* The text alignment is slightly off on this elment (Chrome) */
-    line-height: calc(var(--core__control__height) * 0.95);
+    line-height: calc(var(--control__height) * 0.95);
   }
 
   label {
     @include vertical-align-baseline;
     display: inline-block;
-    min-height: var(--core__control__height);
+    min-height: var(--control__height);
   }
 
   /* buttons */

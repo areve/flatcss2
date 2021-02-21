@@ -3,7 +3,6 @@
 :root {
   $theme__link__color: royalblue;
   --theme__link__color: $theme__link__color;
-  --theme__table__color: lighten(var(--theme__link__color), 50%);
   --theme__table__box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.12);
 
   --theme__general__border-radius: calc(1em * 1 / 3);

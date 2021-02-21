@@ -4,6 +4,6 @@ module.exports = {
     'postcss-color-function': {},
     'postcss-nested': {},
     'autoprefixer': {},
-    'postcss-assets': {},
+    'postcss-inline-svg': {}
   }
 }

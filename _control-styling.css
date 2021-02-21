@@ -4,7 +4,7 @@
   --controls__progress__color: var(--core__button-submit__background-color);
 }
 
-@mixin flat-button-styling {
+@mixin flat-button-styling() {
   @if $enable-styling {
     border-style: none;
     background-color: var(--core__button__background-color);
@@ -27,29 +27,29 @@
   }
 }
 
-@mixin svg-drop-arrow {
-  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='32' height='32' fill='rgba(0,0,0,0.5)'><path d='M4 10l 0 0 24 0 -12 12z'/></svg>");
+@mixin svg-drop-arrow() {
+  background-image: svg-load("assets/drop-arrow.svg", fill=rgba(0, 0, 0, 0.5));
   background-repeat: no-repeat;
   background-size: 1em;
 }
 
 @mixin svg-check($opacity: 1, $color: 0, 127, 255) {
   /* $color--rgb: red($color) + "," + green($color) + "," + blue($color); */
-  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='32' height='32' fill='rgba(127,127,127,1)'><path d='M13 26l-10-10.598 2.798-2.859 7.149 7.473 13.144-14.016 2.909 2.806z'/></svg>");
+  background-image: svg-load("assets/check.svg", fill=rgba(0, 0, 0, 0.5));
   background-repeat: no-repeat;
   background-size: 1em;
 }
 
 @mixin svg-cross($opacity: 1, $color: 0, 127, 255) {
   /* $color--rgb: red($color) + "," + green($color) + "," + blue($color); */
-  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' fill='rgba(127,127,127,1)' width='32' height='32'><path d='M27 24.188l-8.315-8.209 8.2-8.282-3.697-3.697-8.212 8.318-8.31-8.203-3.666 3.666 8.321 8.24-8.206 8.313 3.666 3.666 8.237-8.318 8.285 8.203z'/></svg>");
+  background-image: svg-load("assets/cross.svg", fill=rgba(0, 0, 0, 0.5));
   background-repeat: no-repeat;
   background-size: 1em;
 }
 
-@mixin svg-circle($opacity: 1, $color: var(--core__success__color)) {
+@mixin svg-circle($opacity: 1, $color: 0, 127, 255) {
   /* $color--rgb: red($color) + "," + green($color) + "," + blue($color); */
-  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='32' height='32' fill='rgba(127,127,127,1)'><circle cx='15.5' cy='15.5' r='14'/></svg>");
+  background-image: svg-load("assets/circle.svg", fill=rgba(0, 0, 0, 0.5));
   background-repeat: no-repeat;
   background-size: 1em;
 }
@@ -95,14 +95,12 @@
       color: var(--core__control__color);
 
       &[disabled] {
-        background-color: disable-color(var(--core__control__background-color));
-        color: disable-color(var(--core__control__color));
+        background-color: var(--core__control__background-color--disabled);
+        color: var(--core__control__color--disabled);
       }
       &[readonly] {
-        background-color: readonly-color(
-          var(--core__control__background-color)
-        );
-        color: readonly-color(var(--core__control__color));
+        background-color: var(--core__control__background-color--readonly);
+        color: var(--core__control__color--readonly);
       }
     }
 
@@ -248,8 +246,8 @@
     input[type="button"],
     button {
       &[disabled] {
-        background-color: disable-color(var(--core__button__background-color));
-        color: disable-color(var(--core__button__color));
+        background-color: var(--core__button__background-color--disabled);
+        color: var(--core__button__color--disabled);
       }
     }
 
@@ -265,10 +263,10 @@
         color: var(--core__button-submit__color);
 
         &[disabled] {
-          background-color: disable-color(
-            var(--core__button-submit__background-color)
+          background-color: var(
+            --core__button-submit__background-color--disabled
           );
-          color: disable-color(var(--core__button-submit__color));
+          color: var(--core__button-submit__color--disabled);
         }
 
         &:focus,
@@ -286,10 +284,10 @@
         background-color: var(--core__button-reset__background-color);
         color: var(--core__button-reset__color);
         &[disabled] {
-          background-color: disable-color(
-            var(--core__button-reset__background-color)
+          background-color: var(
+            --core__button-reset__background-color--disabled
           );
-          color: disable-color(var(--core__button-reset__color));
+          color: var(--core__button-reset__color--disabled);
         }
         &:focus,
         &:active,
@@ -305,10 +303,8 @@
         background-color: var(--core__button__background-color);
         color: var(--core__button__color);
         &[disabled] {
-          background-color: disable-color(
-            var(--core__button__background-color)
-          );
-          color: disable-color(var(--core__button__color));
+          background-color: var(--core__button__background-color--disabled);
+          color: var(--core__button__color--disabled);
         }
         &:focus,
         &:active,
@@ -342,12 +338,10 @@
       }
 
       &[disabled]:before {
-        background-color: disable-color(var(--core__control__background-color));
+        background-color: var(--core__control__background-color--disabled);
       }
       &[readonly]:before {
-        background-color: readonly-color(
-          var(--core__control__background-color)
-        );
+        background-color: var(--core__control__background-color--readonly);
       }
     }
 
@@ -366,13 +360,13 @@
         @include svg-check(1, var(--core__success__color));
       }
       &[disabled]:before {
-        @include svg-check(1, disable-color(var(--core__control__color)));
+        @include svg-check(1, var(--core__control__color--disabled));
       }
       &[disabled]:required:before {
-        @include svg-check(1, disable-color(var(--core__success__color)));
+        @include svg-check(1, var(--core__success__color--disabled));
       }
       &[readonly]:required:before {
-        @include svg-check(1, readonly-color(var(--core__success__color)));
+        @include svg-check(1, var(--core__success__color--readonly));
       }
     }
 
@@ -392,13 +386,13 @@
         @include svg-circle(1, var(--core__success__color));
       }
       &[disabled]:before {
-        @include svg-circle(1, disable-color(var(--core__control__color)));
+        @include svg-circle(1, var(--core__control__color--disabled));
       }
       &[disabled]:required:before {
-        @include svg-circle(1, disable-color(var(--core__success__color)));
+        @include svg-circle(1, var(--core__success__color--disabled));
       }
       &[readonly]:required:before {
-        @include svg-circle(1, readonly-color(var(--core__success__color)));
+        @include svg-circle(1, var(--core__success__color--readonly));
       }
     }
 
@@ -413,12 +407,10 @@
         padding: 1px 3px;
       }
       &[disabled] {
-        background-color: disable-color(var(--core__control__background-color));
+        background-color: var(--core__control__background-color--disabled);
       }
       &[readonly] {
-        background-color: readonly-color(
-          var(--core__control__background-color)
-        );
+        background-color: var(--core__control__background-color--readonly);
       }
       &:focus,
       &:hover:not([disabled]):not([readonly]) {
@@ -527,12 +519,16 @@
       width: var(--core__control__width);
     }
 
+    select,
+    select:not([multiple]):not([size]) {
+      @include svg-drop-arrow;
+    }
     select {
+      background-color: red;
       @include flat-button-styling;
       -webkit-appearance: none;
       -moz-appearance: none;
       appearance: none;
-      @include svg-drop-arrow;
       background-position: calc(100% - 0.5em) 50%;
       background-repeat: no-repeat;
       background-color: var(--core__button__background-color);
@@ -543,8 +539,8 @@
         @include lowlight;
       }
       &[disabled] {
-        background-color: disable-color(var(--core__button__background-color));
-        color: disable-color(var(--core__button__color));
+        background-color: var(--core__button__background-color--disabled);
+        color: var(--core__button__color--disabled);
       }
       &:required {
         @include validation-highlight(var(--core__success__color));
@@ -568,8 +564,8 @@
       }
       &[disabled]::-webkit-file-upload-button {
         cursor: not-allowed;
-        background-color: disable-color(var(--core__button__background-color));
-        color: disable-color(var(--core__button__color));
+        background-color: var(--core__button__background-color--disabled);
+        color: var(--core__button__color--disabled);
       }
       &:required::-webkit-file-upload-button {
         @include validation-highlight(var(--core__success__color));

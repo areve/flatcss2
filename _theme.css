@@ -1,21 +1,19 @@
 /* _theme.css */
 
 :root {
-  --theme__link__color: var(--core__button-submit__background-color);
+  $theme__link__color: royalblue;
+  --theme__link__color: $theme__link__color;
   --theme__table__color: lighten(var(--theme__link__color), 50%);
   --theme__table__box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.12);
 
   --theme__general__border-radius: calc(1em * 1 / 3);
   --theme__general__box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.3);
 
-  --theme__control__border-color--focus: var(--theme__link__color);
+  --theme__control__border-color--focus: color($theme__link__color a(50%));
   --theme__control__border-width--focus: 4px;
   --theme__control__box-shadow--focus: 0 0 0
     var(--theme__control__border-width--focus)
     var(--theme__control__border-color--focus);
-  /*
-  //rgba(var(--theme__control__border-color--focus), 0.5)
-    ; */
 }
 
 @mixin theme-radius {

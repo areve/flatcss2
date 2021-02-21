@@ -27,41 +27,19 @@
   }
 }
 
-@mixin svg-drop-arrow() {
-  background-image: svg-load("assets/drop-arrow.svg", fill=rgba(0, 0, 0, 0.5));
-  background-repeat: no-repeat;
-  background-size: 1em;
-}
-
-@mixin svg-check($opacity: 1, $color: 0, 127, 255) {
-  /* $color--rgb: red($color) + "," + green($color) + "," + blue($color); */
-  background-image: svg-load("assets/check.svg", fill=rgba(0, 0, 0, 0.5));
-  background-repeat: no-repeat;
-  background-size: 1em;
-}
-
-@mixin svg-cross($opacity: 1, $color: 0, 127, 255) {
-  /* $color--rgb: red($color) + "," + green($color) + "," + blue($color); */
-  background-image: svg-load("assets/cross.svg", fill=rgba(0, 0, 0, 0.5));
-  background-repeat: no-repeat;
-  background-size: 1em;
-}
-
-@mixin svg-circle($opacity: 1, $color: 0, 127, 255) {
-  /* $color--rgb: red($color) + "," + green($color) + "," + blue($color); */
-  background-image: svg-load("assets/circle.svg", fill=rgba(0, 0, 0, 0.5));
+@mixin background-icon() {
   background-repeat: no-repeat;
   background-size: 1em;
 }
 
 @mixin valid-background($opacity) {
-  @include svg-check($opacity);
+  @include background-icon();
   background-color: var(--core__control__background-color);
   background-position: calc(100% - 0.5em) 0.5em;
 }
 
 @mixin invalid-background($opacity) {
-  @include svg-cross($opacity);
+  @include background-icon();
   background-color: var(--core__control__background-color);
   background-position: calc(100% - 0.5em) 0.5em;
 }
@@ -121,6 +99,7 @@
       /* border-left: $core__control__validation--border-width solid; */
       &:optional {
         @include valid-background(0);
+        background-image: var(--icon-validation--optional);
         @include validation-highlight;
       }
       &[minlength],
@@ -131,16 +110,21 @@
       &:required {
         @include validation-highlight(var(--core__success__color));
         @include valid-background(1);
+        background-image: var(--icon-validation--valid);
+
         &:focus:valid {
-          @include valid-background(0.5);
+          background-image: var(--icon-validation--focus-valid);
         }
         &:focus:invalid {
-          @include invalid-background(0.4);
+          @include invalid-background();
+
+          background-image: var(--icon-validation--focus-invalid);
         }
       }
       &:invalid {
         @include validation-highlight(var(--core__error__color));
-        @include invalid-background(0.6);
+        @include invalid-background();
+        background-image: var(--icon-validation--invalid);
       }
     }
 
@@ -348,25 +332,32 @@
     input[type="checkbox"] {
       &::before {
         background-position: 50% 50%;
-        @include svg-check(0, var(--core__control__color));
+        @include background-icon();
+        background-image: var(--icon-checkbox--unchecked);
       }
       &:required:before {
-        @include svg-cross(0.6);
+        @include background-icon();
+        background-image: var(--icon-checkbox--unchecked-required);
       }
       &:checked::before {
-        @include svg-check(1, var(--core__control__color));
+        @include background-icon();
+        background-image: var(--icon-checkbox--checked);
       }
       &:required:checked::before {
-        @include svg-check(1, var(--core__success__color));
+        @include background-icon();
+        background-image: var(--icon-checkbox--checked-required);
       }
       &[disabled]:before {
-        @include svg-check(1, var(--core__control__color--disabled));
+        @include background-icon();
+        background-image: var(--icon-checkbox--checked-disabled);
       }
       &[disabled]:required:before {
-        @include svg-check(1, var(--core__success__color--disabled));
+        @include background-icon();
+        background-image: var(--icon-checkbox--checked-required-disabled);
       }
       &[readonly]:required:before {
-        @include svg-check(1, var(--core__success__color--readonly));
+        @include background-icon();
+        background-image: var(--icon-checkbox--checked-required-readonly);
       }
     }
 
@@ -375,24 +366,30 @@
       &::before {
         border-radius: 50%;
         background-position: 50% 50%;
-        @include svg-circle(0, var(--core__control__color));
+        @include background-icon();
+        background-image: var(--icon-radio--unchecked);
       }
       /* I don't think it is possible to style */
       /* all radios red and turn them to white except for the checked one. */
       &:checked::before {
-        @include svg-circle(1, var(--core__control__color));
+        @include background-icon();
+        background-image: var(--icon-radio--checked);
       }
       &:required:checked:before {
-        @include svg-circle(1, var(--core__success__color));
+        @include background-icon();
+        background-image: var(--icon-radio--checked-required);
       }
       &[disabled]:before {
-        @include svg-circle(1, var(--core__control__color--disabled));
+        @include background-icon();
+        background-image: var(--icon-radio--disabled);
       }
       &[disabled]:required:before {
-        @include svg-circle(1, var(--core__success__color--disabled));
+        @include background-icon();
+        background-image: var(--icon-radio--required);
       }
       &[readonly]:required:before {
-        @include svg-circle(1, var(--core__success__color--readonly));
+        @include background-icon();
+        background-image: var(--icon-radio--required-readonly);
       }
     }
 
@@ -521,7 +518,8 @@
 
     select,
     select:not([multiple]):not([size]) {
-      @include svg-drop-arrow;
+      @include background-icon;
+      background-image: var(--icon-select-arrow);
     }
     select {
       background-color: red;

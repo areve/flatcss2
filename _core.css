@@ -2,7 +2,10 @@
 
 :root {
   /* semantic colors */
-  --core__success__color: green;
+  $core__success__color: green;
+  $core__success__color--disabled: magenta;
+
+  --core__success__color: $core__success__color;
   --core__error__color: crimson;
   --core__samp-kbd-var__background-color: lavender;
   /* NB #F0F0F0 is the same as hljs default theme */
@@ -19,9 +22,52 @@
 
   /* controls */
   --core__control__background-color: #fcfcfc;
-  --core__control__color: #111;
+  $core__control__color: #111;
+  --core__control__color: $core__control__color;
   --core__control__height: 2em;
   --core__control__width: 12em;
+
+  --icon-checkbox--unchecked: none;
+  --icon-checkbox--checked: svg-load(
+    "assets/check.svg",
+    fill=$core__control__color
+  );
+  --icon-checkbox--checked-required: svg-load(
+    "assets/check.svg",
+    fill=$core__success__color
+  );
+  --icon-checkbox--checked-disabled: svg-load("assets/check.svg", fill=magenta);
+  --icon-checkbox--checked-required-disabled: svg-load(
+    "assets/check.svg",
+    fill=magenta
+  );
+  --icon-checkbox--checked-required-readonly: svg-load(
+    "assets/check.svg",
+    fill=magenta
+  );
+
+  --icon-checkbox--unchecked-required: svg-load(
+    "assets/cross.svg",
+    fill=magenta
+  );
+
+  --icon-validation--optional: none;
+  --icon-validation--valid: svg-load("assets/check.svg", fill=magenta);
+  --icon-validation--focus-valid: svg-load("assets/check.svg", fill=magenta);
+  --icon-validation--focus-invalid: svg-load("assets/cross.svg", fill=magenta);
+  --icon-validation--invalid: svg-load("assets/cross.svg", fill=magenta);
+
+  --icon-select-arrow: svg-load(
+    "assets/drop-arrow.svg",
+    fill=rgba(0, 0, 0, 0.5)
+  );
+
+  --icon-radio--unchecked: none;
+  --icon-radio--checked: svg-load("assets/circle.svg", fill=rgba(0, 0, 0, 1));
+  --icon-radio--checked-required: svg-load("assets/circle.svg", fill=magenta);
+  --icon-radio--disabled: svg-load("assets/circle.svg", fill=magenta);
+  --icon-radio--required: svg-load("assets/circle.svg", fill=magenta);
+  --icon-radio--required-readonly: svg-load("assets/circle.svg", fill=magenta);
 
   /* general */
   --core__background-color: #fff;

@@ -1,4 +1,4 @@
-/* _control-styling.scss */
+/* _control-styling.css */
 
 $enable-styling: true;
 
@@ -33,14 +33,14 @@ $controls__progress__color: var(--core__button-submit__background-color);
   background-size: 1em;
 }
 
-@mixin svg-check($opacity: 1, $color: 0,127,255) {
+@mixin svg-check($opacity: 1, $color: 0, 127, 255) {
   /* $color--rgb: red($color) + "," + green($color) + "," + blue($color); */
   background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='32' height='32' fill='rgba(127,127,127,1)'><path d='M13 26l-10-10.598 2.798-2.859 7.149 7.473 13.144-14.016 2.909 2.806z'/></svg>");
   background-repeat: no-repeat;
   background-size: 1em;
 }
 
-@mixin svg-cross($opacity: 1, $color: 0,127,255) {
+@mixin svg-cross($opacity: 1, $color: 0, 127, 255) {
   /* $color--rgb: red($color) + "," + green($color) + "," + blue($color); */
   background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' fill='rgba(127,127,127,1)' width='32' height='32'><path d='M27 24.188l-8.315-8.209 8.2-8.282-3.697-3.697-8.212 8.318-8.31-8.203-3.666 3.666 8.321 8.24-8.206 8.313 3.666 3.666 8.237-8.318 8.285 8.203z'/></svg>");
   background-repeat: no-repeat;
@@ -120,6 +120,7 @@ $controls__progress__color: var(--core__button-submit__background-color);
     input[type="password"],
     input[type="local"],
     input:not([type]) {
+      /* border-left: $core__control__validation--border-width solid; */
       &:optional {
         @include valid-background(0);
         @include validation-highlight;
@@ -253,21 +254,20 @@ $controls__progress__color: var(--core__button-submit__background-color);
     }
 
     @if $enable-semantic-colors {
-      buttonbutton:not([type]):not(standard):not(negative),
-      button[type="submit"]:not(standard):not(negative),
-      input[type="submit"]:not(standard):not(negative),
-      buttonprimary,
-      button[type="reset"]primary,
-      input[type="reset"]primary,
-      input[type="button"]primary {
-        background-color: var(--core__button-submit__background-color);
-        color: var(--core__button-submit__color);
+      /*
+      button%flat-button:not([type]):not(%flat-standard):not(%flat-negative),
+      %flat-button[type=submit]:not(%flat-standard):not(%flat-negative),
+      %flat-input[type=submit]:not(%flat-standard):not(%flat-negative),
+      %flat-button%flat-primary,
+      %flat-button[type=reset]%flat-primary,
+      %flat-input[type=reset]%flat-primary,
+      %flat-input[type=button]%flat-primary {
+        background-color: $core__button-submit__background-color;
+        color: $core__button-submit__color;
 
         &[disabled] {
-          background-color: disable-color(
-            var(--core__button-submit__background-color)
-          );
-          color: disable-colorvar(--core__button-submit__color));
+          background-color: disable-color($core__button-submit__background-color);
+          color: disable-color($core__button-submit__color);
         }
 
         &:focus,
@@ -277,18 +277,17 @@ $controls__progress__color: var(--core__button-submit__background-color);
         }
       }
 
-      button[type="reset"]:not(standard):not(primary),
-      input[type="reset"]:not(standard):not(primary),
-      buttonnegative,
-      input[type="submit"]negative,
-      input[type="button"]negative {
-        background-color: var(--core__button-reset__background-color);
-        color: var(--core__button-reset__color);
+      %flat-button[type=reset]:not(%flat-standard):not(%flat-primary),
+      %flat-input[type=reset]:not(%flat-standard):not(%flat-primary),
+      %flat-button%flat-negative,
+      %flat-input[type=submit]%flat-negative,
+      %flat-input[type=button]%flat-negative
+      {
+        background-color: $core__button-reset__background-color;
+        color: $core__button-reset__color;
         &[disabled] {
-          background-color: disable-color(
-            var(--core__button-reset__background-color)
-          );
-          color: disable-color(var(--core__button-reset__color));
+          background-color: disable-color($core__button-reset__background-color);
+          color: disable-color($core__button-reset__color);
         }
         &:focus,
         &:active,
@@ -297,15 +296,16 @@ $controls__progress__color: var(--core__button-submit__background-color);
         }
       }
 
-      buttonnormal,
-      input[type="reset"]button,
-      input[type="submit"]button,
-      input[type="button"]normal {
-        background-color: var(--core__button__background-color);
-        color: var(--core__button__color);
+      %flat-button%flat-normal,
+      %flat-input[type=reset]%flat-button,
+      %flat-input[type=submit]%flat-button,
+      %flat-input[type=button]%flat-normal
+      {
+        background-color: $core__button__background-color;
+        color: $core__button__color;
         &[disabled] {
-          background-color: disable-color(var(--core__button__background-color));
-          color: disable-color(var(--core__button__color));
+          background-color: disable-color($core__button__background-color);
+          color: disable-color($core__button__color);
         }
         &:focus,
         &:active,
@@ -313,6 +313,7 @@ $controls__progress__color: var(--core__button-submit__background-color);
           @include lowlight;
         }
       }
+      */
     }
 
     input[type="checkbox"],
@@ -322,15 +323,14 @@ $controls__progress__color: var(--core__button-submit__background-color);
       line-height: 0;
       border: 0;
       position: relative;
-      top: calc(var(--core__control__height) * -1/16);
-
+      top: calc(var(--core__control__height) * -1 / 16);
       &:before {
         position: absolute;
         content: " ";
         background-color: var(--core__control__background-color);
         display: inline-block;
-        height: calc(var(--core__control__height) * 6/8);
-        width: calc(var(--core__control__height) * 6/8);
+        height: calc(var(--core__control__height) * 6 / 8);
+        width: calc(var(--core__control__height) * 6 / 8);
         overflow: hidden;
         border: var(--core__border);
       }
@@ -343,7 +343,9 @@ $controls__progress__color: var(--core__button-submit__background-color);
         background-color: disable-color(var(--core__control__background-color));
       }
       &[readonly]:before {
-        background-color: readonly-color(var(--core__control__background-color));
+        background-color: readonly-color(
+          var(--core__control__background-color)
+        );
       }
     }
 
@@ -372,7 +374,7 @@ $controls__progress__color: var(--core__button-submit__background-color);
       }
     }
 
-    input[type="radio"] {
+    %flat-input[type="radio"] {
       border-radius: 50%;
       &::before {
         border-radius: 50%;
@@ -401,17 +403,20 @@ $controls__progress__color: var(--core__button-submit__background-color);
     input[type="color"] {
       -webkit-appearance: none;
       padding: 5px;
-      width: calc(var(--core__control__height) * 15/16);
-      height: calc(var(--core__control__height) * 15/16);
+      width: calc(var(--core__control__height) * 15 / 16);
+      height: calc(var(--core__control__height) * 15 / 16);
       background-color: var(--core__control__background-color);
       @media screen and (-webkit-min-device-pixel-ratio: 0) {
-        padding: 1px 3px; /* set padding on ms and chrome */
+        /* set padding on ms and chrome */
+        padding: 1px 3px;
       }
       &[disabled] {
         background-color: disable-color(var(--core__control__background-color));
       }
       &[readonly] {
-        background-color: readonly-color(var(--core__control__background-color));
+        background-color: readonly-color(
+          var(--core__control__background-color)
+        );
       }
       &:focus,
       &:hover:not([disabled]):not([readonly]) {
@@ -423,8 +428,8 @@ $controls__progress__color: var(--core__button-submit__background-color);
       appearance: none;
       height: var(--core__control__height);
       width: var(--core__control__width);
+      /* for ms */
       background-color: var(--core__control__background-color);
-       /* for ms */
       &[disabled],
       &[readonly] {
         opacity: 0.5;
@@ -438,8 +443,8 @@ $controls__progress__color: var(--core__button-submit__background-color);
       &::-webkit-slider-thumb {
         -webkit-appearance: none;
         background-color: var(--core__button-submit__background-color);
-        height: calc(var(--core__control__height) * 6/8);
-        width: calc(var(--core__control__height) * 6/8);
+        height: calc(var(--core__control__height) * 6 / 8);
+        width: calc(var(--core__control__height) * 6 / 8);
       }
       &::-moz-range-track {
         background-color: transparent;
@@ -454,8 +459,8 @@ $controls__progress__color: var(--core__button-submit__background-color);
       &::-moz-range-thumb {
         background-color: var(--core__button-submit__background-color);
         border: none;
-        height: calc(var(--core__control__height) * 6/8);
-        width: calc(var(--core__control__height) * 6/8);
+        height: calc(var(--core__control__height) * 6 / 8);
+        width: calc(var(--core__control__height) * 6 / 8);
       }
       &::-ms-track {
         background-color: transparent;

@@ -7,7 +7,7 @@
   --core__samp-kbd-var__background-color: lavender;
   /* NB #F0F0F0 is the same as hljs default theme */
   --core__code__background-color: #f0f0f0;
-  /* --core__output__background-color: oldlace; */
+  --core__output__background-color: oldlace;
   --core__mark__background-color: yellow;
   --core__control__validation--border-width: 3px;
 

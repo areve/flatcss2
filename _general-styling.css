@@ -1,12 +1,6 @@
 /* _general-styling.css */
 
 /* mixins */
-@mixin highlight {
-  @if $enable-styling {
-    filter: brightness(110%);
-  }
-}
-
 @mixin section-block {
   @if $enable-styling {
     margin: var(--core__vertical-padding-size) 0;

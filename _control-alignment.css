@@ -7,17 +7,17 @@
 }
 
 @mixin vertical-align-baseline-fix(
-  $height: var(--core__control__height),
+  /* core__control__height*/ $height: 2em,
   $top: 0.5
 ) {
   vertical-align: middle;
 
   $margin: calc(
-    var(--core__control__height) - var(--height) + var(--core__small-pad)
+    var(--core__control__height) - $height + var(--core__small-pad)
   );
 
-  margin-top: calc(var(--margin) * var(--top));
-  margin-bottom: calc(var(--margin) * (1 - var(--top)));
+  margin-top: calc($margin * $top);
+  margin-bottom: calc($margin * calc(1 - $top));
 }
 
 @mixin vertical-align-baseline--fix-overflow-hidden {
@@ -35,94 +35,93 @@
   position: relative;
 }
 
-/* %flat-core { */
-select,
-output,
-progress,
-meter,
-textarea,
-input:not([type]),
-input[type="checkbox"],
-input[type="radio"],
-input[type="text"],
-input[type="search"],
-input[type="range"],
-input[type="tel"],
-input[type="url"],
-input[type="color"],
-input[type="email"],
-input[type="password"],
-input[type="date"],
-input[type="month"],
-input[type="week"],
-input[type="time"],
-input[type="local"],
-input[type="number"],
-input[type="file"] {
-  @include vertical-align-baseline;
-  display: inline-block;
-  position: relative;
-  height: var(--core__control__height);
-  padding: var(--core__input__padding);
-}
-
-input {
-  &[type="file"] {
-    @include vertical-align-baseline-fix();
+.flat {
+  select,
+  output,
+  progress,
+  meter,
+  textarea,
+  input:not([type]),
+  input[type="checkbox"],
+  input[type="radio"],
+  input[type="text"],
+  input[type="search"],
+  input[type="range"],
+  input[type="tel"],
+  input[type="url"],
+  input[type="color"],
+  input[type="email"],
+  input[type="password"],
+  input[type="date"],
+  input[type="month"],
+  input[type="week"],
+  input[type="time"],
+  input[type="local"],
+  input[type="number"],
+  input[type="file"] {
+    @include vertical-align-baseline;
+    display: inline-block;
+    position: relative;
     height: var(--core__control__height);
+    padding: var(--core__input__padding);
   }
 
-  &[type="color"],
-  &[type="range"] {
-    $height: calc(var(--core__control__height) * 15 / 16);
-    height: $height;
-    @include vertical-align-baseline-fix(var(--height), 0.2);
+  input {
+    &[type="file"] {
+      @include vertical-align-baseline-fix();
+      height: var(--core__control__height);
+    }
+
+    &[type="color"],
+    &[type="range"] {
+      $height: calc(var(--core__control__height) * 15 / 16);
+      height: $height;
+      @include vertical-align-baseline-fix($height, 0.2);
+    }
+
+    &[type="image"] {
+      @include vertical-align-baseline-fix();
+    }
+
+    &[type="checkbox"],
+    &[type="radio"] {
+      $height: calc(var(--core__control__height) * 6 / 8);
+      height: $height;
+      width: $height;
+      @include vertical-align-baseline-fix($height, 0.5);
+    }
   }
 
-  &[type="image"] {
+  progress {
     @include vertical-align-baseline-fix();
   }
 
-  &[type="checkbox"],
-  &[type="radio"] {
-    $height: calc(var(--core__control__height) * 6 / 8);
-    height: var(--height);
-    width: var(--height);
-    @include vertical-align-baseline-fix(var(--height));
+  meter {
+    @include vertical-align-baseline-fix();
+  }
+
+  output {
+    @include vertical-align-baseline-fix();
+    /* The text alignment is slightly off on this elment (Chrome) */
+    line-height: calc(var(--core__control__height) * 0.95);
+  }
+
+  label {
+    @include vertical-align-baseline;
+    display: inline-block;
+    min-height: var(--core__control__height);
+  }
+
+  /* buttons */
+  labelbutton {
+    @include vertical-align-baseline--fix-overflow-hidden;
+  }
+  select,
+  input[type="file"],
+  input[type="submit"],
+  input[type="reset"],
+  input[type="button"],
+  button {
+    @include flat-button-alignment;
   }
 }
-
-progress {
-  @include vertical-align-baseline-fix();
-}
-
-meter {
-  @include vertical-align-baseline-fix();
-}
-
-output {
-  @include vertical-align-baseline-fix();
-  /* The text alignment is slightly off on this elment (Chrome) */
-  line-height: calc(var(--core__control__height) * 0.95);
-}
-
-label {
-  @include vertical-align-baseline;
-  display: inline-block;
-  min-height: var(--core__control__height);
-}
-
-/* buttons */
-
-labelbutton {
-  @include vertical-align-baseline--fix-overflow-hidden;
-}
-select,
-input[type="file"],
-input[type="submit"],
-input[type="reset"],
-input[type="button"],
-button {
-  @include flat-button-alignment;
-}
-/* } */

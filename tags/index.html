@@ -123,7 +123,7 @@
           <figcaption>Example figure with an image</figcaption>
           <figure>
             <figcaption>Example figcaption</figcaption>
-            <img src="assets/flat-moon100.jpg" alt="Example image, the moon">
+            <img src="../assets/flat-moon100.jpg" alt="Example image, the moon">
           </figure>
         </figure>
       </section>
@@ -303,21 +303,21 @@
         </p>
         <figure>
           <figcaption>Image will shrink to fit</figcaption>
-          <img src="assets/flat-moon.jpg" alt="Example image, the moon">
+          <img src="../assets/flat-moon.jpg" alt="Example image, the moon">
         </figure>
 
         <figure>
           <figcaption>Example image in link</figcaption>
           <p>
             This is an example image in a link
-            <a href="#"><img src="assets/flat-moon100.jpg" alt="Example image, the moon"></a>
+            <a href="#"><img src="../assets/flat-moon100.jpg" alt="Example image, the moon"></a>
           </p>
         </figure>
         <figure>
           <figcaption>Example picture</figcaption>
           <picture>
-            <source media="(min-width: 650px)" srcset="assets/flat-moon100.jpg">
-            <img src="assets/flat-moon100.jpg" alt="Example image, the moon">
+            <source media="(min-width: 650px)" srcset="../assets/flat-moon100.jpg">
+            <img src="../assets/flat-moon100.jpg" alt="Example image, the moon">
           </picture>
         </figure>
         <figure>
@@ -326,8 +326,8 @@
           This is an example canvas in a link
           <a href="#">
             <picture>
-              <source media="(min-width: 650px)" srcset="assets/flat-moon100.jpg">
-              <img src="assets/flat-moon100.jpg" alt="Example image, the moon">
+              <source media="(min-width: 650px)" srcset="../assets/flat-moon100.jpg">
+              <img src="../assets/flat-moon100.jpg" alt="Example image, the moon">
             </picture>
           </a>
         </figure>
@@ -355,7 +355,7 @@
         <figure>
           <figcaption>Example audio.</figcaption>
           <audio controls>
-            <source src="assets/silence.ogg" type="audio/ogg">
+            <source src="../assets/silence.ogg" type="audio/ogg">
             Your browser does not support the audio element.
           </audio>
         </figure>
@@ -363,10 +363,10 @@
         <figure>
           <figcaption>Example video.</figcaption>
           <video width="320" height="240" controls autostart="0">
-            <source src="assets/sample.ogv" type="video/ogg">
-            <track src="assets/subtitles-en.vtt" kind="subtitles" srclang="en" label="English">
-            <track src="assets/subtitles-en.vtt" kind="captions" srclang="en" label="English">
-            <track src="assets/subtitles-en.vtt" kind="description" srclang="en" label="English">
+            <source src="../assets/sample.ogv" type="video/ogg">
+            <track src="../assets/subtitles-en.vtt" kind="subtitles" srclang="en" label="English">
+            <track src="../assets/subtitles-en.vtt" kind="captions" srclang="en" label="English">
+            <track src="../assets/subtitles-en.vtt" kind="description" srclang="en" label="English">
           </video>
         </figure>
 
@@ -382,16 +382,16 @@
             Probably don't use the <code>object</code> and <code>embed</code> tags. Use <code>video</code> and <code>audio</code>
             tags where possible.
           </p>
-          <object data="assets/silence.ogg" alt="Example of a silent audio file">
+          <object data="../assets/silence.ogg" alt="Example of a silent audio file">
             <param name="autoplay" value="false">
             <param name="autostart" value="0">
           </object>
-          <embed src="assets/silence.ogg" autostart="0" autoplay="0" type="audio/ogg">
+          <embed src="../assets/silence.ogg" autostart="0" autoplay="0" type="audio/ogg">
         </figure>
 
         <figure>
           <figcaption>Example iframe.</figcaption>
-          <iframe src="assets/example.html" title="Example iframe"></iframe>
+          <iframe src="../assets/example.html" title="Example iframe"></iframe>
         </figure>
 
       </section>
@@ -543,7 +543,7 @@
             <input id="input-submit" type="submit" placeholder="submit">
 
             <label for="input-image">Label for image</label>
-            <input id="input-image" type="image" src="assets/button32.png" alt="Example image button">
+            <input id="input-image" type="image" src="../assets/button32.png" alt="Example image button">
 
             <label for="input-reset">Label for reset</label>
             <input id="input-reset" type="reset" placeholder="reset">

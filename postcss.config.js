@@ -1,7 +1,10 @@
 module.exports = {
   plugins: {
-    'postcss-advanced-variables': {},
-    'postcss-color-function': {},
+    'postcss-sassy-mixins': {},
+    'postcss-advanced-variables': {
+      disable: '@mixin, @include'
+    },
+    'postcss-color-mod-function': {},
     'postcss-nested': {},
     'autoprefixer': {},
     'postcss-inline-svg': {}

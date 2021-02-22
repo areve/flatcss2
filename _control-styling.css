@@ -99,8 +99,8 @@
       /* border-left: $control__validation--border-width solid; */
       &:optional {
         @include valid-background(0);
-        background-image: var(--icon-validation--optional);
-        @include validation-highlight;
+        background-image: var(--icon-validation--none);
+        @include validation-highlight();
       }
       &[minlength],
       &[maxlength],
@@ -113,12 +113,12 @@
         background-image: var(--icon-validation--valid);
 
         &:focus:valid {
-          background-image: var(--icon-validation--focus-valid);
+          background-image: var(--icon-validation--valid-focus);
         }
         &:focus:invalid {
           @include invalid-background();
 
-          background-image: var(--icon-validation--focus-invalid);
+          background-image: var(--icon-validation--invalid-focus);
         }
       }
       &:invalid {

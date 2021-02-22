@@ -96,8 +96,12 @@
     $button-reset__color saturation(40%) a(50%)
   );
 
-  /* icons */
+  /* checkbox icon */
   --icon-checkbox--unchecked: none;
+  --icon-checkbox--unchecked-required: svg-load(
+    "assets/cross.svg",
+    fill = $error__color
+  );
   --icon-checkbox--checked: svg-load(
     "assets/check.svg",
     fill = $control__color
@@ -108,62 +112,60 @@
   );
   --icon-checkbox--checked-disabled: svg-load(
     "assets/check.svg",
-    fill = color-mod($success__color saturation(40%) a(50%))
+    fill = color-mod($control__color a(50%))
   );
   --icon-checkbox--checked-required-disabled: svg-load(
     "assets/check.svg",
-    fill = color-mod($success__color saturation(40%) a(50%))
+    fill = color-mod($success__color a(50%))
   );
   --icon-checkbox--checked-required-readonly: svg-load(
     "assets/check.svg",
-    fill = color-mod($success__color saturation(40%) a(50%))
+    fill = color-mod($success__color a(50%))
   );
 
-  --icon-checkbox--unchecked-required: svg-load(
-    "assets/cross.svg",
-    fill = color-mod($error__color saturation(40%) a(50%))
-  );
-
-  --icon-validation--optional: none;
-  --icon-validation--valid: svg-load(
-    "assets/check.svg",
-    fill = color-mod($success__color saturation(40%) a(50%))
-  );
-  --icon-validation--focus-valid: svg-load(
-    "assets/check.svg",
-    fill = color-mod($success__color saturation(40%) a(50%))
-  );
-  --icon-validation--focus-invalid: svg-load(
-    "assets/cross.svg",
-    fill = color-mod($error__color saturation(40%) a(50%))
-  );
-  --icon-validation--invalid: svg-load(
-    "assets/cross.svg",
-    fill = color-mod($error__color saturation(40%) a(50%))
-  );
-
-  --icon-select-arrow: svg-load(
-    "assets/drop-arrow.svg",
-    fill = rgba(0, 0, 0, 0.5)
-  );
-
+  /* radio icon */
   --icon-radio--unchecked: none;
-  --icon-radio--checked: svg-load("assets/circle.svg", fill = rgba(0, 0, 0, 1));
+  --icon-radio--checked: svg-load("assets/circle.svg", fill = $control__color);
   --icon-radio--checked-required: svg-load(
     "assets/circle.svg",
-    fill = color-mod($success__color saturation(40%) a(50%))
+    fill = $success__color
   );
   --icon-radio--disabled: svg-load(
     "assets/circle.svg",
-    fill = color-mod($success__color saturation(40%) a(50%))
+    fill = color-mod($control__color a(50%))
   );
   --icon-radio--required: svg-load(
     "assets/circle.svg",
-    fill = color-mod($success__color saturation(40%) a(50%))
+    fill = color-mod($success__color a(50%))
   );
   --icon-radio--required-readonly: svg-load(
     "assets/circle.svg",
-    fill = color-mod($success__color saturation(40%) a(50%))
+    fill = color-mod($success__color a(50%))
+  );
+
+  /* validation icon */
+  --icon-validation--none: none;
+  --icon-validation--valid: svg-load(
+    "assets/check.svg",
+    fill = color-mod($success__color a(60%))
+  );
+  --icon-validation--valid-focus: svg-load(
+    "assets/check.svg",
+    fill = color-mod($success__color a(40%))
+  );
+  --icon-validation--invalid: svg-load(
+    "assets/cross.svg",
+    fill = color-mod($error__color a(60%))
+  );
+  --icon-validation--invalid-focus: svg-load(
+    "assets/cross.svg",
+    fill = color-mod($error__color a(40%))
+  );
+
+  /* select drop arrow */
+  --icon-select-arrow: svg-load(
+    "assets/drop-arrow.svg",
+    fill = rgba(0, 0, 0, 0.5)
   );
 }
 

@@ -215,6 +215,7 @@
     input[type="submit"],
     input[type="reset"],
     input[type="button"],
+    .button,
     button {
       text-decoration: none;
       @include flat-button-styling;
@@ -228,6 +229,7 @@
     }
 
     input[type="button"],
+    .button,
     button {
       &[disabled] {
         background-color: var(--button__background-color--disabled);
@@ -236,10 +238,12 @@
     }
 
     @if $enable-semantic-colors {
-      button:not([type]):not(.standard):not(.negative),
-      button[type="submit"]:not(.standard):not(.negative),
+      /* button:not([type]):not(.standard):not(.negative), */
+      /* button[type="submit"]:not(.standard):not(.negative), */
       input[type="submit"]:not(.standard):not(.negative),
+      .button.primary,
       button.primary,
+      .button[type="reset"].primary,
       button[type="reset"].primary,
       input[type="reset"].primary,
       input[type="button"].primary {
@@ -258,8 +262,10 @@
         }
       }
 
+      .button[type="reset"]:not(.standard):not(.primary),
       button[type="reset"]:not(.standard):not(.primary),
       input[type="reset"]:not(.standard):not(.primary),
+      .button.negative,
       button.negative,
       input[type="submit"].negative,
       input[type="button"].negative {
@@ -276,6 +282,7 @@
         }
       }
 
+      .button.normal,
       button.normal,
       input[type="reset"].button,
       input[type="submit"].button,

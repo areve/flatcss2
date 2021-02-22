@@ -68,12 +68,11 @@
   $button__background-color: #eee;
   --button__background-color: $button__background-color;
   --button__background-color--disabled: color-mod(
-    $button__background-color saturation(40%) a(50%)
+    $button__background-color a(50%)
   );
   $button__color: #111;
   --button__color: $button__color;
-  --button__color--disabled: color-mod($button__color saturation(40%) a(50%));
-
+  --button__color--disabled: color-mod($button__color a(50%));
   $button-submit__background-color: royalblue;
   --button-submit__background-color: $button-submit__background-color;
   --button-submit__background-color--disabled: color-mod(
@@ -84,7 +83,6 @@
   --button-submit__color--disabled: color-mod(
     $button-submit__color saturation(40%) a(50%)
   );
-
   $button-reset__background-color: firebrick;
   --button-reset__background-color: $button-reset__background-color;
   --button-reset__background-color--disabled: color-mod(

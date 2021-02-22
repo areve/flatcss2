@@ -38,13 +38,6 @@
     outline: none;
     box-shadow: var(--theme__control__box-shadow--focus);
     z-index: 1;
-
-    /* @supports (-ms-ime-align: auto) {
-      // ms
-      box-shadow: none;
-      outline: var(--theme__control__border-width--focus) solid
-        rgba(var(--theme__control__border-color--focus), 0.5);
-    } */
   }
 }
 
@@ -78,6 +71,7 @@ input[type="submit"],
 input[type="reset"],
 input[type="button"],
 select,
+.button,
 button {
   @include theme-radius;
   @include transition;

@@ -96,7 +96,6 @@
     input[type="password"],
     input[type="local"],
     input:not([type]) {
-      /* border-left: $control__validation--border-width solid; */
       &:optional {
         @include valid-background(0);
         background-image: var(--icon-validation--none);
@@ -238,7 +237,6 @@
     }
 
     @if $enable-semantic-colors {
-      /* button:not([type]):not(.standard):not(.negative), */
       button[type="submit"]:not(.standard):not(.negative),
       input[type="submit"]:not(.standard):not(.negative),
       .button.primary,

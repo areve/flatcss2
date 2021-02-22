@@ -22,17 +22,17 @@
   /* controls */
   $control__background-color: #fcfcfc;
   --control__background-color: $control__background-color;
-  --control__background-color--readonly: color(
+  --control__background-color--readonly: color-mod(
     $control__background-color saturation(40%) a(50%)
   );
-  --control__background-color--disabled: color(
+  --control__background-color--disabled: color-mod(
     $control__background-color saturation(40%) a(50%)
   );
 
   $control__color: #111;
   --control__color: $control__color;
-  --control__color--readonly: color($control__color saturation(40%) a(50%));
-  --control__color--disabled: color($control__color saturation(40%) a(50%));
+  --control__color--readonly: color-mod($control__color saturation(40%) a(50%));
+  --control__color--disabled: color-mod($control__color saturation(40%) a(50%));
   --control__height: 2em;
   --control__width: 12em;
 
@@ -67,100 +67,103 @@
   /* button colors */
   $button__background-color: #eee;
   --button__background-color: $button__background-color;
-  --button__background-color--disabled: color(
+  --button__background-color--disabled: color-mod(
     $button__background-color saturation(40%) a(50%)
   );
   $button__color: #111;
   --button__color: $button__color;
-  --button__color--disabled: color($button__color saturation(40%) a(50%));
+  --button__color--disabled: color-mod($button__color saturation(40%) a(50%));
 
   $button-submit__background-color: royalblue;
   --button-submit__background-color: $button-submit__background-color;
-  --button-submit__background-color--disabled: color(
+  --button-submit__background-color--disabled: color-mod(
     $button-submit__background-color saturation(40%) a(50%)
   );
   $button-submit__color: #fff;
   --button-submit__color: $button-submit__color;
-  --button-submit__color--disabled: color(
+  --button-submit__color--disabled: color-mod(
     $button-submit__color saturation(40%) a(50%)
   );
 
   $button-reset__background-color: firebrick;
   --button-reset__background-color: $button-reset__background-color;
-  --button-reset__background-color--disabled: color(
+  --button-reset__background-color--disabled: color-mod(
     $button-reset__background-color saturation(40%) a(50%)
   );
   $button-reset__color: #fff;
   --button-reset__color: $button-reset__color;
-  --button-reset__color--disabled: color(
+  --button-reset__color--disabled: color-mod(
     $button-reset__color saturation(40%) a(50%)
   );
 
   /* icons */
   --icon-checkbox--unchecked: none;
-  --icon-checkbox--checked: svg-load("assets/check.svg", fill=$control__color);
+  --icon-checkbox--checked: svg-load(
+    "assets/check.svg",
+    fill = $control__color
+  );
   --icon-checkbox--checked-required: svg-load(
     "assets/check.svg",
-    fill=$success__color
+    fill = $success__color
   );
   --icon-checkbox--checked-disabled: svg-load(
     "assets/check.svg",
-    fill=color($success__color saturation(40%) a(50%))
+    fill = color-mod($success__color saturation(40%) a(50%))
   );
   --icon-checkbox--checked-required-disabled: svg-load(
     "assets/check.svg",
-    fill=color($success__color saturation(40%) a(50%))
+    fill = color-mod($success__color saturation(40%) a(50%))
   );
   --icon-checkbox--checked-required-readonly: svg-load(
     "assets/check.svg",
-    fill=color($success__color saturation(40%) a(50%))
+    fill = color-mod($success__color saturation(40%) a(50%))
   );
 
   --icon-checkbox--unchecked-required: svg-load(
     "assets/cross.svg",
-    fill=color($error__color saturation(40%) a(50%))
+    fill = color-mod($error__color saturation(40%) a(50%))
   );
 
   --icon-validation--optional: none;
   --icon-validation--valid: svg-load(
     "assets/check.svg",
-    fill=color($success__color saturation(40%) a(50%))
+    fill = color-mod($success__color saturation(40%) a(50%))
   );
   --icon-validation--focus-valid: svg-load(
     "assets/check.svg",
-    fill=color($success__color saturation(40%) a(50%))
+    fill = color-mod($success__color saturation(40%) a(50%))
   );
   --icon-validation--focus-invalid: svg-load(
     "assets/cross.svg",
-    fill=color($error__color saturation(40%) a(50%))
+    fill = color-mod($error__color saturation(40%) a(50%))
   );
   --icon-validation--invalid: svg-load(
     "assets/cross.svg",
-    fill=color($error__color saturation(40%) a(50%))
+    fill = color-mod($error__color saturation(40%) a(50%))
   );
 
   --icon-select-arrow: svg-load(
     "assets/drop-arrow.svg",
-    fill=rgba(0, 0, 0, 0.5)
+    fill = rgba(0, 0, 0, 0.5)
   );
 
   --icon-radio--unchecked: none;
-  --icon-radio--checked: svg-load("assets/circle.svg", fill=rgba(0, 0, 0, 1));
+  --icon-radio--checked: svg-load("assets/circle.svg", fill = rgba(0, 0, 0, 1));
   --icon-radio--checked-required: svg-load(
     "assets/circle.svg",
-    fill=color($success__color saturation(40%) a(50%))
+    fill = color-mod($success__color saturation(40%) a(50%))
   );
   --icon-radio--disabled: svg-load(
     "assets/circle.svg",
-    fill=color($success__color saturation(40%) a(50%))
+    fill = color-mod($success__color saturation(40%) a(50%))
   );
   --icon-radio--required: svg-load(
     "assets/circle.svg",
-    fill=color($success__color saturation(40%) a(50%))
+    fill = color-mod($success__color saturation(40%) a(50%))
   );
   --icon-radio--required-readonly: svg-load(
     "assets/circle.svg",
-    fill=color($success__color saturation(40%) a(50%))
+    fill = color-mod($success__color saturation(40%) a(50%))
   );
 }
 

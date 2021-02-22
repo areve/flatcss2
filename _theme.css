@@ -250,7 +250,7 @@ legend {
 
 /* table */
 table {
-  shadows & {
+  .flat.shadows & {
     box-shadow: var(--theme__table__box-shadow);
   }
   .flat.styling & {

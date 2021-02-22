@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta
       name="Description"
-      content="Write some HTML5, add flat2.css, be happy. It is lightweight, easy to build on top of, and no javascript."
+      content="Write some HTML5, add flat2.css, everything looks nice aligns easily, supports validation. Almost no classes to learn  easy to build on top of, and no javascript."
     />
     <meta name="theme-color" content="#0074d9" />
     <script
@@ -20,7 +20,7 @@
       gtag("js", new Date());
       gtag("config", "UA-127468929-1");
     </script>
-    <title>flat2.css</title>
+    <title>flat.css</title>
     <link rel="stylesheet" type="text/css" media="screen" href="./flat2.css" />
   </head>
 
@@ -46,8 +46,6 @@
         and cross-browser consistency.
       </p>
       <mark>TODO this documentation needs updating</mark>
-      <mark>TODO this try using automatic postcss prefixing</mark>
-      <mark>TODO fix page titles</mark>
       <ol>
         <li>
           Add
@@ -58,7 +56,11 @@
           to your page.
         </li>
         <li>
-          Add <code>class="flat theme"</code> to your<code>&lt;html&gt;</code>
+          Add
+          <code
+            >class="flat styling shadows transitions bevels focus-borders"</code
+          >
+          to your<code>&lt;html&gt;</code>
           tag.
         </li>
       </ol>
@@ -296,10 +298,13 @@ some text</textarea
         <h2>Advanced</h2>
         <p>
           After adding <strong>flat.css</strong> add
-          <code>class="flat theme"</code> to your<code>&lt;html&gt;</code> tag
-          to get all of the features, once added with no other styles your page
-          will be styled much like this documentation page. But you may want
-          slightly less, here are some options:
+          <code
+            >class="flat styling shadows transitions bevels focus-borders"</code
+          >
+          to your<code>&lt;html&gt;</code> tag to get all of the features, once
+          added with no other styles your page will be styled much like this
+          documentation page. But you may want slightly less, here are some
+          options:
         </p>
         <ul>
           <li>
@@ -328,13 +333,6 @@ some text</textarea
             <code>class="flat focus-borders"</code> - adds big fat borders on
             the focused element.
           </li>
-          <li>
-            <code>class="flat theme"</code> - This is the same as
-            <code
-              >class="flat styling shadows transitions bevels
-              focus-borders"</code
-            >
-          </li>
         </ul>
 
         <p>Some other classes exist too:</p>
@@ -355,12 +353,7 @@ some text</textarea
             a reset button.
           </li>
         </ul>
-        <p>
-          <em>flat.css</em> is written using
-          <a href="https://en.wikipedia.org/wiki/Sass_(stylesheet_language)"
-            >sass</a
-          >, and is easily extended, suggestions welcome.
-        </p>
+        <p><em>flat.css</em> is easily extended, suggestions welcome.</p>
         <h2>Acknowledgments</h2>
         <ul>
           <li>

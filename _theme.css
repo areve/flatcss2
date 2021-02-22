@@ -83,7 +83,7 @@ button {
 
 label.button:focus-within {
   @include focus-border;
-  @include lowlight;
+  @include disabled-dim;
 }
 
 input[type="file"]::-webkit-file-upload-button {
@@ -94,7 +94,7 @@ input[type="file"]::-webkit-file-upload-button {
 }
 
 input[type="file"]:focus::-webkit-file-upload-button {
-  @include lowlight;
+  @include disabled-dim;
 }
 
 input[type="range"] {

@@ -168,19 +168,19 @@
 }
 
 /* mixins */
-@mixin highlight {
+@mixin focus-highlight {
   @if $enable-styling {
     filter: brightness(110%);
   }
 }
 
-@mixin highlight-2 {
+@mixin focus-highlight-strong {
   @if $enable-styling {
     filter: brightness(130%);
   }
 }
 
-@mixin lowlight {
+@mixin disabled-dim {
   @if $enable-styling {
     filter: brightness(95%);
   }

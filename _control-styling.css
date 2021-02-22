@@ -193,7 +193,7 @@
         &:focus,
         &:active,
         &:hover:not([disabled]) {
-          @include highlight;
+          @include focus-highlight;
         }
         &[disabled] {
           filter: grayscale(85%);
@@ -222,7 +222,7 @@
       &:focus,
       &:active,
       &:hover:not([disabled]) {
-        @include lowlight;
+        @include disabled-dim;
         text-decoration: none;
         cursor: default;
       }
@@ -258,7 +258,7 @@
         &:focus,
         &:active,
         &:hover:not([disabled]) {
-          @include highlight-2;
+          @include focus-highlight-strong;
         }
       }
 
@@ -278,7 +278,7 @@
         &:focus,
         &:active,
         &:hover:not([disabled]) {
-          @include highlight-2;
+          @include focus-highlight-strong;
         }
       }
 
@@ -296,7 +296,7 @@
         &:focus,
         &:active,
         &:hover:not([disabled]) {
-          @include lowlight;
+          @include disabled-dim;
         }
       }
     }
@@ -321,7 +321,7 @@
       }
 
       &:hover:not([disabled]):before {
-        @include lowlight;
+        @include disabled-dim;
       }
 
       &[disabled]:before {
@@ -414,7 +414,7 @@
       }
       &:focus,
       &:hover:not([disabled]):not([readonly]) {
-        @include lowlight;
+        @include disabled-dim;
       }
     }
 
@@ -431,7 +431,7 @@
       &:active,
       &:hover:not([disabled]) {
         &::-webkit-slider-thumb {
-          @include highlight-2;
+          @include focus-highlight-strong;
         }
       }
       &::-webkit-slider-thumb {
@@ -447,7 +447,7 @@
       &:active,
       &:hover:not([disabled]) {
         &::-moz-range-thumb {
-          @include highlight;
+          @include focus-highlight;
         }
       }
       &::-moz-range-thumb {
@@ -464,7 +464,7 @@
       &:active,
       &:hover:not([disabled]) {
         &::-ms-thumb {
-          @include highlight;
+          @include focus-highlight;
         }
       }
       &::-ms-thumb {
@@ -537,7 +537,7 @@
       @include validation-highlight(transparent);
       &:active,
       &:hover:not([disabled]) {
-        @include lowlight;
+        @include disabled-dim;
       }
       &[disabled] {
         background-color: var(--button__background-color--disabled);
@@ -559,7 +559,7 @@
       }
       &:active::-webkit-file-upload-button,
       &:hover:not([disabled])::-webkit-file-upload-button {
-        @include lowlight;
+        @include disabled-dim;
         text-decoration: none;
         cursor: default;
       }

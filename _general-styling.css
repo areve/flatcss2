@@ -226,7 +226,7 @@
       &:focus,
       &:active,
       &:hover:not([disabled]) {
-        @include highlight;
+        @include focus-highlight;
       }
     }
   }

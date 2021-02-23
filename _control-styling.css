@@ -237,6 +237,7 @@
     }
 
     @if $enable-semantic-colors {
+      button:not([type]):not(.standard):not(.negative),
       button[type="submit"]:not(.standard):not(.negative),
       input[type="submit"]:not(.standard):not(.negative),
       .button.primary,

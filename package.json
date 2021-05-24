@@ -4,7 +4,8 @@
   "scripts": {
     "dev": "vite",
     "build": "vite build",
-    "serve": "vite preview"
+    "serve": "vite preview",
+    "preinstall": "node ./check-yarn.js"
   },
   "devDependencies": {
     "postcss-color-mod-function": "^3.0.3",

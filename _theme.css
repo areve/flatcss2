@@ -23,7 +23,9 @@
 
 @mixin transition {
   .flat.transitions & {
-    transition: all 0.3s;
+    transition: all 0.2s;
+    transition-property: background-color, color, box-shadow, opacity,
+      border-color, filter;
   }
 }
 

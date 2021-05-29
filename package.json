@@ -1,11 +1,12 @@
 {
   "name": "flatcss",
-  "version": "2.0.3",
+  "version": "2.0.4",
   "description": "Write some HTML5, add flat.css, be happy. It is lightweight, easy to build on top of, and no javascript",
   "scripts": {
     "dev": "vite",
     "build": "vite build && cp dist/assets/flat.*.css flat.min.css",
     "serve": "vite preview",
+    "prepublish ": "yarn build",
     "preinstall": "node ./check-yarn.js"
   },
   "author": "Andrew Challen",

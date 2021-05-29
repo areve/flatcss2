@@ -264,3 +264,16 @@ details {
 summary {
   @include content-block;
 }
+
+/* font sizes */
+small {
+  font-size: var(--small__font-size);
+}
+
+sub {
+  font-size: var(--sub__font-size);
+}
+
+sup {
+  font-size: var(--sup__font-size);
+}

@@ -64,6 +64,11 @@
   --h5__font-size: 0.83em;
   --h6__font-size: 0.67em;
 
+  /* font sizes */
+  --small__font-size: 0.83em;
+  --sub__font-size: 0.67em;
+  --sup__font-size: 0.67em;
+
   /* button colors */
   $button__background-color: #eee;
   --button__background-color: $button__background-color;

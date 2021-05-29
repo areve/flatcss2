@@ -33,94 +33,92 @@
   position: relative;
 }
 
-.flat {
-  select,
-  output,
-  progress,
-  meter,
-  textarea,
-  input:not([type]),
-  input[type="checkbox"],
-  input[type="radio"],
-  input[type="text"],
-  input[type="search"],
-  input[type="range"],
-  input[type="tel"],
-  input[type="url"],
-  input[type="color"],
-  input[type="email"],
-  input[type="password"],
-  input[type="date"],
-  input[type="month"],
-  input[type="week"],
-  input[type="time"],
-  input[type="local"],
-  input[type="number"],
-  input[type="file"] {
-    @include vertical-align-baseline;
-    display: inline-block;
-    position: relative;
+select,
+output,
+progress,
+meter,
+textarea,
+input:not([type]),
+input[type="checkbox"],
+input[type="radio"],
+input[type="text"],
+input[type="search"],
+input[type="range"],
+input[type="tel"],
+input[type="url"],
+input[type="color"],
+input[type="email"],
+input[type="password"],
+input[type="date"],
+input[type="month"],
+input[type="week"],
+input[type="time"],
+input[type="local"],
+input[type="number"],
+input[type="file"] {
+  @include vertical-align-baseline;
+  display: inline-block;
+  position: relative;
+  height: var(--control__height);
+  padding: var(--input__padding);
+}
+
+input {
+  &[type="file"] {
+    @include vertical-align-baseline-fix();
     height: var(--control__height);
-    padding: var(--input__padding);
   }
 
-  input {
-    &[type="file"] {
-      @include vertical-align-baseline-fix();
-      height: var(--control__height);
-    }
-
-    &[type="color"],
-    &[type="range"] {
-      $height: calc(var(--control__height) * 15 / 16);
-      height: $height;
-      @include vertical-align-baseline-fix($height, 0.2);
-    }
-
-    &[type="image"] {
-      @include vertical-align-baseline-fix();
-    }
-
-    &[type="checkbox"],
-    &[type="radio"] {
-      $height: calc(var(--control__height) * 6 / 8);
-      height: $height;
-      width: $height;
-      @include vertical-align-baseline-fix($height, 0.5);
-    }
+  &[type="color"],
+  &[type="range"] {
+    $height: calc(var(--control__height) * 15 / 16);
+    height: $height;
+    @include vertical-align-baseline-fix($height, 0.2);
   }
 
-  progress {
+  &[type="image"] {
     @include vertical-align-baseline-fix();
   }
 
-  meter {
-    @include vertical-align-baseline-fix();
+  &[type="checkbox"],
+  &[type="radio"] {
+    $height: calc(var(--control__height) * 6 / 8);
+    height: $height;
+    width: $height;
+    @include vertical-align-baseline-fix($height, 0.5);
   }
+}
 
-  output {
-    @include vertical-align-baseline-fix();
-    /* The text alignment is slightly off on this elment (Chrome) */
-    line-height: calc(var(--control__height) * 0.95);
-  }
+progress {
+  @include vertical-align-baseline-fix();
+}
 
-  label {
-    @include vertical-align-baseline;
-    display: inline-block;
-    min-height: var(--control__height);
-  }
+meter {
+  @include vertical-align-baseline-fix();
+}
 
-  /* buttons */
-  label.button {
-    @include vertical-align-baseline--fix-overflow-hidden;
-  }
-  select,
-  input[type="file"],
-  input[type="submit"],
-  input[type="reset"],
-  input[type="button"],
-  .button,
-  button {
-    @include flat-button-alignment;
-  }
+output {
+  @include vertical-align-baseline-fix();
+  /* The text alignment is slightly off on this elment (Chrome) */
+  line-height: calc(var(--control__height) * 0.95);
+}
+
+label {
+  @include vertical-align-baseline;
+  display: inline-block;
+  min-height: var(--control__height);
+}
+
+/* buttons */
+label.button {
+  @include vertical-align-baseline--fix-overflow-hidden;
+}
+select,
+input[type="file"],
+input[type="submit"],
+input[type="reset"],
+input[type="button"],
+.button,
+button {
+  @include flat-button-alignment;
 }

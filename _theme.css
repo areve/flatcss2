@@ -16,13 +16,13 @@
 }
 
 @mixin theme-radius {
-  .flat.bevels & {
+  .flat-bevels & {
     border-radius: var(--theme__general__border-radius);
   }
 }
 
 @mixin transition {
-  .flat.transitions & {
+  .flat-transitions & {
     transition: all 0.2s;
     transition-property: background-color, color, box-shadow, opacity,
       border-color, filter;
@@ -30,13 +30,13 @@
 }
 
 @mixin shadow {
-  .flat.shadows & {
+  .flat-shadows & {
     box-shadow: var(--theme__general__box-shadow);
   }
 }
 
 @mixin focus-border {
-  .flat.focus-borders & {
+  .flat-focus-borders & {
     outline: none;
     box-shadow: var(--theme__control__box-shadow--focus);
     z-index: 1;
@@ -44,7 +44,7 @@
 }
 
 @mixin button-colors {
-  .flat.styling & {
+  .flat-styling & {
     background-color: var(--button__background-color);
     color: var(--button__color);
   }
@@ -53,13 +53,13 @@
 /* links */
 a:not(.button) {
   @include transition;
-  .flat.styling & {
+  .flat-styling & {
     color: var(--theme__link__color);
     text-decoration: none;
   }
   &:active,
   &:hover {
-    .flat.styling & {
+    .flat-styling & {
       text-decoration: underline;
     }
   }
@@ -206,20 +206,20 @@ figure {
 }
 
 figcaption {
-  .flat.styling & {
+  .flat-styling & {
     margin-bottom: var(--container__padding-size);
   }
 }
 
 blockquote,
 address {
-  .flat.styling & {
+  .flat-styling & {
     font-style: italic;
   }
 }
 
 body {
-  .flat.styling & {
+  .flat-styling & {
     background-color: var(--background-color);
     color: var(--color);
     font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
@@ -234,7 +234,7 @@ body {
 fieldset {
   @include theme-radius;
   @include shadow;
-  .flat.styling & {
+  .flat-styling & {
     padding: var(--container__padding-size);
     border: var(--border);
   }
@@ -243,7 +243,7 @@ fieldset {
 legend {
   @include theme-radius;
   @include shadow;
-  .flat.styling & {
+  .flat-styling & {
     background-color: var(--background-color);
     border: var(--border);
     padding: var(--text__padding);
@@ -252,10 +252,10 @@ legend {
 
 /* table */
 table {
-  .flat.shadows & {
+  .flat-shadows & {
     box-shadow: var(--theme__table__box-shadow);
   }
-  .flat.styling & {
+  .flat-styling & {
     border: var(--border);
   }
 }

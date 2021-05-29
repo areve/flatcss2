@@ -1,12 +1,16 @@
 {
-  "name": "flatcss2",
-  "version": "0.0.0",
+  "name": "flatcss",
+  "version": "2.0.0",
+  "description": "Write some HTML5, add flat.css, be happy. It is lightweight, easy to build on top of, and no javascript",
   "scripts": {
     "dev": "vite",
-    "build": "vite build",
+    "build": "vite build && cp dist/assets/flat.*.css flat.min.css",
     "serve": "vite preview",
     "preinstall": "node ./check-yarn.js"
   },
+  "author": "Andrew Challen",
+  "license": "ISC",
+  "main": "flat.css",
   "devDependencies": {
     "postcss-color-mod-function": "^3.0.3",
     "vite": "^2.0.1"

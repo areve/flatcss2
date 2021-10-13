@@ -10,9 +10,17 @@
 
   --theme__control__border-color--focus: color-mod($theme__link__color a(50%));
   --theme__control__border-width--focus: 4px;
-  --theme__control__box-shadow--focus: 0 0 0
-    var(--theme__control__border-width--focus)
-    var(--theme__control__border-color--focus);
+  --theme__control__box-shadow--focus: 0 0 0 var(--theme__control__border-width--focus) var(--theme__control__border-color--focus);
+
+  --theme__transition-duration: 0.2s;
+  --theme__transition-property: background-color, color, box-shadow, opacity, border-color, filter;
+  --theme__control__z-index--focus: 1;
+  --theme__control__outline--focus: none;
+  --theme__body__font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  --theme__body__font-size: 1em;
+  --theme__body__max-width: 960px;
+  --theme__body__margin: auto;
+  --theme__body__padding: 3em 3%;
 }
 
 @mixin theme-radius {
@@ -20,9 +28,8 @@
 }
 
 @mixin transition {
-  transition: all 0.2s;
-  transition-property: background-color, color, box-shadow, opacity,
-    border-color, filter;
+  transition-duration:  var(--theme__transition-duration);
+  transition-property: var(--theme__transition-property);
 }
 
 @mixin shadow {
@@ -30,9 +37,9 @@
 }
 
 @mixin focus-border {
-  outline: none;
+  outline: var(--theme__control__outline--focus);
   box-shadow: var(--theme__control__box-shadow--focus);
-  z-index: 1;
+  z-index: var(--theme__control__z-index--focus);
 }
 
 @mixin button-colors {
@@ -205,11 +212,11 @@ address {
 body {
   background-color: var(--background-color);
   color: var(--color);
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-  font-size: 1em;
-  max-width: 960px;
-  margin: auto;
-  padding: 3em 3%;
+  font-family: var(--theme__body__font-family);
+  font-size: var(--theme__body__font-size);
+  max-width: var(--theme__body__max-width);
+  margin: var(--theme__body__margin);
+  padding: var(--theme__body__padding);
 }
 
 /* forms */

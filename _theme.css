@@ -210,8 +210,6 @@ address {
 }
 
 body {
-  background-color: var(--background-color);
-  color: var(--color);
   font-family: var(--theme__body__font-family);
   font-size: var(--theme__body__font-size);
   max-width: var(--theme__body__max-width);

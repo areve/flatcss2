@@ -37,6 +37,7 @@
   --control__width: 12em;
 
   /* general */
+  --font-size: 16px;
   --background-color: #fff;
   --color: #111;
   --border-width: 1px;
@@ -56,13 +57,23 @@
   --button__padding: 0 calc(var(--small-pad) * 3);
   --container__padding-size: 1em;
 
+  /* body */
+  --body__line-height: 1.6em;
+
+
   /* headings */
   --h1__font-size: 2em;
+  --h1__line-height: 1.2em;
   --h2__font-size: 1.5em;
+  --h2__line-height: 1.2em;
   --h3__font-size: 1.17em;
+  --h3__line-height: 1.2em;
   --h4__font-size: 1em;
+  --h4__line-height: 1.2em;
   --h5__font-size: 0.83em;
+  --h5__line-height: 1.2em;
   --h6__font-size: 0.67em;
+  --h6__line-height: 1.2em;
 
   /* font sizes */
   --small__font-size: 0.83em;

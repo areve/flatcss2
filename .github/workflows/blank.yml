@@ -10,14 +10,14 @@ on:
 
 jobs:
   build:
-    runs-on: ubuntu-latest
+    runs-on: windows-latest
     name: Build & Deploy
     steps:
       - uses: actions/checkout@v2
 
       - name: Build
         run: |
-          yarn install
+          yarn install --frozen-lockfile
           yarn build
         shell: bash
 

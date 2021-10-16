@@ -1,24 +1,17 @@
 # flat.css
 
-> Write some HTML5, add **flat.css**, be happy. It is lightweight, easy to build on top of, and no javascript.
+> Write some HTML5, add flat.css, everything looks nice aligns easily, supports validation. Almost no classes to learn easy to build on top of, and no javascript.
 
-See the [Demo and Documenation](https://areve.github.io/flatcss/)
+See the [Demo and Documenation](https://areve.github.io/flatcss2/)
 
-Install by adding this to inside the HTML head tag.
+## Installation
+Add this link tag to your page.
+```html
+<link href="https://unpkg.com/flatcss@2.0.5/flat.css" rel="stylesheet" type="text/css" media="screen">
+``` 
 
-```
-<link href="https://unpkg.com/flatcss@[AIV]{version}[/AIV]/flat.css" rel="stylesheet" type="text/css" media="screen">
-```
-
-or you can install with **npm**
-
-```
-npm install flatcss --save
-```
-
-or **yarn**
+...or you can install with **npm**
 
 ```
-yarn add flatcss
+npm install flatcss
 ```
-

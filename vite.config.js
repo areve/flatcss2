@@ -1,7 +1,7 @@
 const { resolve } = require('path')
 
 module.exports = {
-  base: '',
+  base: '/flatcss2/',
   build: {
     rollupOptions: {
       input: {

@@ -120,5 +120,5 @@ input[type="reset"],
 input[type="button"],
 .button,
 button {
-  @include flat-button-alignment;
+  @include flat-button-alignment; 
 }

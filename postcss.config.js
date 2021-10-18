@@ -7,6 +7,7 @@ module.exports = {
     'postcss-color-mod-function': {},
     'postcss-nested': {},
     'autoprefixer': {},
-    'postcss-inline-svg': {}
+    'postcss-inline-svg': {},
+    'cssnano': {}
   }
 }

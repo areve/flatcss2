@@ -3,6 +3,8 @@ const { resolve } = require('path')
 module.exports = {
   base: '/flatcss2/',
   build: {
+    minify: false, // using cssnano instead because this breaks some inlined svg
+
     rollupOptions: {
       input: {
         main: resolve(__dirname, 'index.html'),
